@@ -12,7 +12,7 @@ export const Container = styled.section `
         div {
             display: flex;
             flex-direction: column;
-            flex-wrap: wrap;
+            align-items: center;
             gap: .5vh;
             margin: 0 2vw;
             input {

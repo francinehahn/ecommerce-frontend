@@ -21,13 +21,13 @@ export const Container = styled.section `
             padding: 30vh 0 37vh 0;
         }
         @media screen and (max-width: 1000px) {
-            padding: 28vh 0 35vh 0;
+            padding: 27vh 0 34vh 0;
         }
 
         p {
             font-size: 20px;
         }
-        
+
         svg {
             height: 40px;
             width: 40px;
