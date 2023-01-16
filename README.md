@@ -28,7 +28,7 @@ http://terrible-family.surge.sh/
 ## Images
 
 ### Desktop version
-![First image](./src/img/printl-desktop.png)
+![First image](./src/img/print1-desktop.png)
 <br>
 
 ![Second image](./src/img/print2-desktop.png)
