@@ -1,7 +1,6 @@
 import styled from "styled-components"
 
 export const Container = styled.section `
-    min-height: 58vh;
     margin-top: 6vh;
 
     span {
@@ -10,7 +9,12 @@ export const Container = styled.section `
         justify-content: center;
         flex-wrap: wrap;
         gap: .8vw;
-        min-height: 56vh;
+        @media screen and (min-width: 1000px) {
+            padding: 30vh 0 37vh 0;
+        }
+        @media screen and (max-width: 1000px) {
+            padding: 32vh 0 39vh 0;
+        }
         p {
             font-size: 20px;
         }
@@ -29,6 +33,16 @@ export const Container = styled.section `
         font-size: 18px;
         font-weight: 500;
     }
+
+    @media screen and (min-width: 1000px) {
+        min-height: 58vh;
+    }
+    @media screen and (min-width: 600px) and (max-width: 1000px) {
+        min-height: 65vh;
+    }
+    @media screen and (max-width: 600px) {
+        min-height: 61vh;
+    }
 `
 
 export const Button = styled.button `
@@ -40,8 +54,8 @@ export const Button = styled.button `
     padding: 1.5vh;
     border: none;
     border-radius: 2px;
-    cursor: pointer;
     :hover {
         opacity: 0.85;
+        cursor: pointer;
     }
 `

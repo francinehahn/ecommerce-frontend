@@ -37,6 +37,7 @@ export const Container = styled.section `
             p {
                 font-size: 14px;
                 color: red;
+                margin: 0 2vw;
             }
         }
         button {

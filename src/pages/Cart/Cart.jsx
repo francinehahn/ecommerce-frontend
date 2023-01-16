@@ -111,10 +111,10 @@ export function Cart() {
                         <CgSmileSad/>
                     </span>
                 )}
-                {productsInCart && <p id={"totalPrice"}>Valor total: R${totalPrice.toFixed(2).toString().replace(".", ",")}</p>}
+                {totalPrice > 0 && <p id={"totalPrice"}>Valor total: R${totalPrice.toFixed(2).toString().replace(".", ",")}</p>}
             </Container>
 
-            {productsInCart.length !== 0 && <Button onClick={handlePayment}>{isLoading? <Loading bgcolor={"white"}/> : "Finalizar a compra"}</Button>}
+            {productsInCart.length > 0 && <Button onClick={handlePayment}>{isLoading? <Loading bgcolor={"white"}/> : "Finalizar a compra"}</Button>}
 
             <Footer/>
         </>
