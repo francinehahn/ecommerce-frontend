@@ -2,7 +2,8 @@ import styled from "styled-components"
 
 export const Container = styled.section `
     margin-top: 6vh;
-
+    min-height: 58vh;
+    
     span {
         display: flex;
         align-items: center;
@@ -28,16 +29,6 @@ export const Container = styled.section `
         color: red;
         font-size: 18px;
         font-weight: 500;
-    }
-
-    @media screen and (min-width: 1000px) {
-        min-height: 58vh;
-    }
-    @media screen and (min-width: 600px) and (max-width: 1000px) {
-        min-height: 65vh;
-    }
-    @media screen and (max-width: 600px) {
-        min-height: 61vh;
     }
 `
 
