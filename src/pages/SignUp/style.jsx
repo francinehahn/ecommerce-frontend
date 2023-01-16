@@ -14,7 +14,7 @@ export const Container = styled.section `
             flex-direction: column;
             align-items: center;
             gap: .5vh;
-            margin: 0 2vw;
+
             input {
                 font-size: 16px;
                 padding: 1vh;
@@ -37,9 +37,13 @@ export const Container = styled.section `
                     width: 80vw;
                 }
             }
+
             p {
                 font-size: 14px;
                 color: red;
+                @media screen and (max-width: 600px) {
+                    width: 80vw;
+                }
             }
         }
 
