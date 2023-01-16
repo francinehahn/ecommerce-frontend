@@ -23,6 +23,7 @@ Data was consumed from an API Rest developed by me. The link of the github repos
 * The project is responsive to all screen sizes.
 
 ## Link Surge
+http://terrible-family.surge.sh/
 
 ## Images
 
@@ -46,10 +47,16 @@ Data was consumed from an API Rest developed by me. The link of the github repos
 <br>
 
 ### Mobile version
-<img src="./src/img/print-labespace5.jpeg" width="45%"/>
+<img src="./src/img/print1-mobile.jpg" width="40%"/>
 <br>
-<img src="./src/img/print-labespace6.jpeg" width="45%"/>
+<img src="./src/img/print2-mobile.jpg" width="40%"/>
 <br>
-<img src="./src/img/print-labespace7.jpeg" width="45%"/>
+<img src="./src/img/print3-mobile.jpg" width="40%"/>
 <br>
-<img src="./src/img/print-labespace8.jpeg" width="45%"/>
+<img src="./src/img/print4-mobile.jpg" width="40%"/>
+<br>
+<img src="./src/img/print5-mobile.jpg" width="40%"/>
+<br>
+<img src="./src/img/print6-mobile.jpg" width="40%"/>
+<br>
+<img src="./src/img/print7-mobile.jpg" width="40%"/>
