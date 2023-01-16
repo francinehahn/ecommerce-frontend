@@ -9,12 +9,8 @@ export const Container = styled.section `
         justify-content: center;
         flex-wrap: wrap;
         gap: .8vw;
-        @media screen and (min-width: 1000px) {
-            padding: 30vh 0 37vh 0;
-        }
-        @media screen and (max-width: 1000px) {
-            padding: 32vh 0 39vh 0;
-        }
+        padding: 30vh 0 37vh 0;
+        
         p {
             font-size: 20px;
         }
