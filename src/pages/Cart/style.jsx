@@ -9,18 +9,25 @@ export const Container = styled.section `
     @media screen and (max-width: 1000px) {
         min-height: 54vh;
     }
-    
+
     span {
         display: flex;
         align-items: center;
         justify-content: center;
         flex-wrap: wrap;
         gap: .8vw;
-        padding: 30vh 0 37vh 0;
+
+        @media screen and (min-width: 1000px) {
+            padding: 30vh 0 37vh 0;
+        }
+        @media screen and (max-width: 1000px) {
+            padding: 28vh 0 35vh 0;
+        }
 
         p {
             font-size: 20px;
         }
+        
         svg {
             height: 40px;
             width: 40px;

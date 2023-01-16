@@ -8,10 +8,13 @@ export const Container = styled.section `
         align-items: center;
         gap: 2vh;
         margin-top: 12vh;
+
         div {
             display: flex;
             flex-direction: column;
+            flex-wrap: wrap;
             gap: .5vh;
+            margin: 0 2vw;
             input {
                 font-size: 16px;
                 padding: 1vh;
@@ -37,9 +40,9 @@ export const Container = styled.section `
             p {
                 font-size: 14px;
                 color: red;
-                margin: 0 2vw;
             }
         }
+
         button {
             font-size: 16px;
             border: none;
