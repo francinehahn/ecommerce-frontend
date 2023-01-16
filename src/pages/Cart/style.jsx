@@ -2,8 +2,14 @@ import styled from "styled-components"
 
 export const Container = styled.section `
     margin-top: 6vh;
-    min-height: 58vh;
 
+    @media screen and (min-width: 1000px) {
+        min-height: 58vh;
+    }
+    @media screen and (max-width: 1000px) {
+        min-height: 54vh;
+    }
+    
     span {
         display: flex;
         align-items: center;
@@ -11,12 +17,7 @@ export const Container = styled.section `
         flex-wrap: wrap;
         gap: .8vw;
         padding: 30vh 0 37vh 0;
-        @media screen and (min-width: 1000px) {
-            padding: 30vh 0 37vh 0;
-        }
-        @media screen and (max-width: 1000px) {
-            padding: 28vh 0 37vh 0;
-        }
+
         p {
             font-size: 20px;
         }
