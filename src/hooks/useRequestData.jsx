@@ -15,7 +15,7 @@ export function useRequestData (url, token="") {
             }
         ).catch(err => {
             setIsLoading(false)
-            setError(err)
+            setError(err.response.data)
         })
     }, [url, token])
     

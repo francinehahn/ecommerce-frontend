@@ -20,30 +20,27 @@ export const FormContainer = styled.form `
         align-items: center;
         gap: 1vh;
 
-        span {
-            display: flex;
-            input {
-                border: none;
-                font-size: 16px;
-                padding: 1.5vh;
-                :focus {
-                    outline: none;
-                }
-                @media screen and (min-width: 1200px) {
-                    width: 25vw;
-                }
-                @media screen and (min-width: 1000px) and (max-width: 1200px) {
-                    width: 35vw;
-                }
-                @media screen and (min-width: 800px) and (max-width: 1000px) {
-                    width: 45vw;
-                }
-                @media screen and (min-width: 600px) and (max-width: 800px) {
-                    width: 60vw;
-                }
-                @media screen and (max-width: 600px) {
-                    width: 80vw;
-                }
+        input {
+            border: none;
+            font-size: 16px;
+            padding: 1.5vh;
+            :focus {
+                outline: none;
+            }
+            @media screen and (min-width: 1200px) {
+                width: 25vw;
+            }
+            @media screen and (min-width: 1000px) and (max-width: 1200px) {
+                width: 35vw;
+            }
+            @media screen and (min-width: 800px) and (max-width: 1000px) {
+                width: 45vw;
+            }
+            @media screen and (min-width: 600px) and (max-width: 800px) {
+                width: 60vw;
+            }
+            @media screen and (max-width: 600px) {
+                width: 80vw;
             }
         }
     }
@@ -61,7 +58,6 @@ export const FormContainer = styled.form `
         color: white;
         font-size: 16px;
         margin-top: 2vh;
-        width: 85px;
         :hover {
             opacity: .8;
             cursor: pointer;

@@ -42,9 +42,9 @@ export function RegisterProduct () {
         }
 
         if (validateProductName(form.name) && validateProductPrice(form.price) && validateImageUrl(form.image_url)) {
-            axios.post(`https://ecommerce-backend-8st9.onrender.com/users/${id}/products`, form, {
+            axios.post(`https://ecommerce-backend-8st9.onrender.com/products`, form, {
                 headers: {
-                    token: token
+                    Authorization: token
                 }
             }).then(() => {
                 setIsLoading(false)
@@ -59,7 +59,7 @@ export function RegisterProduct () {
                 setInvalidNameMessage("")
                 setInvalidPriceMessage("")
                 setInvalidUrlMessage("")
-                setMessage(error.response)
+                setMessage(error.response.data)
             })
         }
     }

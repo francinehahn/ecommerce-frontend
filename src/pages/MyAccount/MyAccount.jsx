@@ -74,7 +74,7 @@ export function MyAccount () {
                         <BsFillPencilFill onClick={() => setShowUserForm(true)}/>
                     </span>
 
-                    {showUserForm && <UserInfoForm showForm={showUserForm} setShowForm={setShowUserForm} email={user.email}/>}
+                    {showUserForm && <UserInfoForm showForm={showUserForm} setShowForm={setShowUserForm} name={user.name} email={user.email}/>}
 
                     {!showUserForm && isLoadingUser && <Loading bgcolor={"purple"}/>}
 
@@ -103,7 +103,7 @@ export function MyAccount () {
                 <PurchasesAndSales>
                     <h3>Minhas compras</h3>
                     {isLoadingPurchases && <Loading bgcolor={"purple"}/>}
-                    {!isLoadingPurchases && !user && errorPurchases && <p>Você não realizou nenhuma compra ainda.</p>}
+                    {!isLoadingPurchases && !purchases && errorPurchases && <p>Você não realizou nenhuma compra ainda.</p>}
                     {!isLoadingPurchases && purchases && (
                         <section>
                             {renderPurchases}

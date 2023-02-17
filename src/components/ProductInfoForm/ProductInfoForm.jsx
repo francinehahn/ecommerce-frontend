@@ -27,7 +27,7 @@ export function ProductInfoForm (props) {
         })
         .catch(error => {
             setIsLoading(false)
-            setMessage(error.response)
+            setMessage(error.response.data)
         })
     }
 

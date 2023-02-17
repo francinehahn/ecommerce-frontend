@@ -35,18 +35,22 @@ export function SignUp () {
 
         if (!validateName(form.name)) {
             setNameError(true)
+            setIsLoading(false)
         }
         
         if (!validateEmail(form.email)) {
             setEmailError(true)
+            setIsLoading(false)
         }
         
         if (!validatePassword(form.password)) {
             setPasswordError(true)
+            setIsLoading(false)
         }
         
         if (form.password !== form.confirmPassword) {
             setDifferentPasswordError(true)
+            setIsLoading(false)
         }
 
         if (validateName(form.name) && validatePassword(form.password) && form.password === form.confirmPassword) {
@@ -56,14 +60,12 @@ export function SignUp () {
             .then(() => {
                 setSuccessMessage("Conta criada com sucesso!")
                 setIsLoading(false)
-                setTimeout(() => navigate("/login"), 3000)
+                setTimeout(() => navigate("/login"), 2500)
             }).catch(error => {
                 setAxiosError(error.response.data)
                 setIsLoading(false)
             })
         }
-
-        setIsLoading(false)
     }
 
     return (
@@ -101,7 +103,7 @@ export function SignUp () {
                         </PasswordInput>
                         {differentPasswordError && <p>A senha deve ser a mesma que a digitada anteriormente.</p>}
                     </div>
-
+                    
                     <button>{!isLoading? "Criar conta" : <Loading bgcolor={"white"}/>}</button>
 
                     <span>{successMessage}</span>

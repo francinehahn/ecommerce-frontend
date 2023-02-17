@@ -11,7 +11,6 @@ import { Loading } from "../../components/Loading/Loading"
 
 export function Cart() {
     const token = localStorage.getItem("token")
-    const id = localStorage.getItem("id")
     let productsInCart = JSON.parse(localStorage.getItem("products")) !== null && JSON.parse(localStorage.getItem("products"))
     let products = productsInCart
     const [reload, setReload] = useState(true)
@@ -24,9 +23,9 @@ export function Cart() {
     }, [reload])
 
     const handleReduceUnit = (name) => {
-        for (let i = 0; i < products.length; i++) {
-            if (products[i].name === name && products[i].units > 1) {
-                products[i].units -= 1
+        for (let product of products) {
+            if (product.name === name && product.units > 1) {
+                product.units -= 1
             }
         }
 
@@ -35,8 +34,8 @@ export function Cart() {
     }
 
     const handleIncreaseUnit = (name) => {
-        for (let i = 0; i < products.length; i++) {
-            products[i].name === name? products[i].units += 1 : products[i].units += 0
+        for (let product of products) {
+            product.name === name? product.units += 1 : product.units += 0
         }
 
         localStorage.setItem("products", JSON.stringify(products))
@@ -58,18 +57,18 @@ export function Cart() {
         } else {
             setIsLoading(true)
             const body = []
-
-            for (let i = 0; i < products.length; i++) {
+            
+            for (let product of products) {
                 body.push({
-                    user_id: id,
-                    product_id: products[i].id,
-                    quantity: products[i].units
+                    productId: product.id,
+                    quantity: product.units
                 })
             }
+            console.log(body)
 
             axios.post('https://ecommerce-backend-8st9.onrender.com/purchases', body, {
                 headers: {
-                    token: token
+                    Authorization: token
                 }
             }).then(() => {
                 setIsLoading(false)
@@ -77,7 +76,7 @@ export function Cart() {
                 setReload(!reload)
                 alert("Pagamento realizado com sucesso!")
             }).catch(error => {
-                alert(error)
+                alert(error.response.data)
                 setIsLoading(false)
             })
         }
