@@ -18,20 +18,19 @@ export function MyAccount () {
     useProtectedPage()
 
     const token = localStorage.getItem("token")
-    const id = localStorage.getItem("id")
     
     const [showUserForm, setShowUserForm] = useState(false)
     const [showProductForm, setShowProductForm] = useState(false)
 
-    const [user, isLoadingUser, errorUser] = useRequestData(`https://labeccomerce2.onrender.com/users/${id}`, token)
-    const [purchases, isLoadingPurchases, errorPurchases] = useRequestData(`https://labeccomerce2.onrender.com/users/${id}/purchases`, token)
-    const [sales, isLoadingSales, errorSales] = useRequestData(`https://labeccomerce2.onrender.com/users/${id}/sales`, token)
-    const [productsRegistered, isLoadingProducts, errorProducts] = useRequestData(`https://labeccomerce2.onrender.com/users/${id}/products`, token)
+    const [user, isLoadingUser, errorUser] = useRequestData(`https://ecommerce-backend-8st9.onrender.com/users`, token)
+    const [purchases, isLoadingPurchases, errorPurchases] = useRequestData(`https://ecommerce-backend-8st9.onrender.com/purchases`, token)
+    const [sales, isLoadingSales, errorSales] = useRequestData(`https://ecommerce-backend-8st9.onrender.com/purchases/sales`, token)
+    const [productsRegistered, isLoadingProducts, errorProducts] = useRequestData(`https://ecommerce-backend-8st9.onrender.com/products/user`, token)
     const [productToBeEdited, setProductToBeEdited] = useState({name: "", price: 0, image_url: ""})
 
     const navigate = useNavigate()
     
-    const renderPurchases = purchases && purchases.length > 0 && purchases.map((item, index) => {
+    const renderPurchases = purchases && purchases.map((item, index) => {
         return <PurchaseCard
                     key={index}
                     name={item.product_name}
@@ -41,7 +40,7 @@ export function MyAccount () {
                 />
     })
 
-    const renderSales = sales && sales.length > 0 && sales.map((item, index) => {
+    const renderSales = sales && sales.map((item, index) => {
         return <PurchaseCard
                     key={index}
                     name={item.product_name}
@@ -51,8 +50,7 @@ export function MyAccount () {
                 />
     })
     
-    const renderProductsRegistered = productsRegistered && productsRegistered !== "The user has not registered any products yet." &&
-        productsRegistered.map((item, index) => {
+    const renderProductsRegistered = productsRegistered && productsRegistered.map((item, index) => {
         return <ProductRegisteredCard
                     key={index}
                     name={item.name}
@@ -80,7 +78,7 @@ export function MyAccount () {
 
                     {!showUserForm && isLoadingUser && <Loading bgcolor={"purple"}/>}
 
-                    {!showUserForm && !isLoadingUser && errorUser && <p>{errorUser}</p>}
+                    {!showUserForm && !isLoadingUser && !data && errorUser && <p>{errorUser}</p>}
 
                     {!showUserForm && !isLoadingUser && user && (
                         <>
@@ -105,9 +103,8 @@ export function MyAccount () {
                 <PurchasesAndSales>
                     <h3>Minhas compras</h3>
                     {isLoadingPurchases && <Loading bgcolor={"purple"}/>}
-                    {!isLoadingPurchases && errorPurchases && <p>{errorPurchases}</p>}
-                    {!isLoadingPurchases && purchases && purchases.length === 0 && <p>Você não realizou nenhuma compra ainda.</p>}
-                    {!isLoadingPurchases && purchases && purchases.length > 0 && (
+                    {!isLoadingPurchases && !user && errorPurchases && <p>Você não realizou nenhuma compra ainda.</p>}
+                    {!isLoadingPurchases && purchases && (
                         <section>
                             {renderPurchases}
                         </section>
@@ -120,9 +117,8 @@ export function MyAccount () {
                     </span>
 
                     {!showProductForm && isLoadingProducts && <Loading bgcolor={"purple"}/>}
-                    {!showProductForm && !isLoadingProducts && errorProducts && <p>{errorProducts}</p>}
-                    {!showProductForm && !isLoadingProducts && productsRegistered && productsRegistered === "The user has not registered any products yet." && <p>Você não cadastrou nenhum produto.</p>}
-                    {!showProductForm && !isLoadingProducts && productsRegistered && productsRegistered.length > 0 && (
+                    {!showProductForm && !isLoadingProducts && !productsRegistered && errorProducts && <p>Você não cadastrou nenhum produto.</p>}
+                    {!showProductForm && !isLoadingProducts && productsRegistered && (
                         <section>
                             {renderProductsRegistered}
                         </section>
@@ -139,9 +135,8 @@ export function MyAccount () {
 
                     <h3>Minhas vendas</h3>
                     {isLoadingSales && <Loading bgcolor={"purple"}/>}
-                    {!isLoadingSales && errorSales && <p>{errorSales}</p>}
-                    {!isLoadingSales && sales && sales.length === 0 && <p>Você não realizou nenhuma venda ainda.</p>}
-                    {!isLoadingSales && sales && sales.length > 0 && (
+                    {!isLoadingSales && !sales && errorSales && <p>Você não realizou nenhuma venda ainda.</p>}
+                    {!isLoadingSales && sales && (
                         <section>
                             {renderSales}
                         </section>

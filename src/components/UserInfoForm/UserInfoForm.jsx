@@ -21,7 +21,7 @@ export function UserInfoForm (props) {
         e.preventDefault()
         setIsLoading(true)
         
-        axios.put(`https://labeccomerce2.onrender.com/users/${id}/account`, form, {
+        axios.put(`https://ecommerce-backend-8st9.onrender.com/users/${id}/account`, form, {
             headers: {
                 token: token
             }

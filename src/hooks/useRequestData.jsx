@@ -8,7 +8,7 @@ export function useRequestData (url, token="") {
     const [error, setError] = useState("")
 
     useEffect(() => {
-        axios.get(url, {headers: {token: token}}).then(
+        axios.get(url, {headers: {Authorization: token}}).then(
             response => {
                 setIsLoading(false)
                 setData(response.data)

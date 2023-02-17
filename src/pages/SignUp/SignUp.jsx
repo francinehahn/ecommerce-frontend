@@ -52,7 +52,7 @@ export function SignUp () {
         if (validateName(form.name) && validatePassword(form.password) && form.password === form.confirmPassword) {
             const body = {name: form.name, email: form.email, password: form.password}
 
-            axios.post('https://labeccomerce2.onrender.com/users', body)
+            axios.post('https://ecommerce-backend-8st9.onrender.com/users/signup', body)
             .then(() => {
                 setSuccessMessage("Conta criada com sucesso!")
                 setIsLoading(false)

@@ -17,7 +17,6 @@ export function Login () {
     const [axiosError, setAxiosError] = useState("")
     const [isLoading, setIsLoading] = useState(false)
     const [inputType, setInputType] = useState("password")
-    const [showPassword, setShowPassword] = useState(false)
 
     const navigate = useNavigate()
 
@@ -41,10 +40,9 @@ export function Login () {
         if (validateEmail(form.email) && validatePassword(form.password)) {
             const body = {email: form.email, password: form.password}
             
-            axios.post('https://labeccomerce2.onrender.com/login', body)
+            axios.post('https://ecommerce-backend-8st9.onrender.com/users/login', body)
             .then(response => {
                 localStorage.setItem("token", response.data.token)
-                localStorage.setItem("id", response.data.id)
                 setReload(!reload)
                 setEmailError(false)
                 setPasswordError(false)

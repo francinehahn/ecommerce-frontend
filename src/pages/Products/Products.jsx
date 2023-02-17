@@ -13,10 +13,12 @@ export function Products() {
     const [order, setOrder] = useState("asc")
     const [reload, setReload] = useState(false)
     const [page, setPage] = useState(1)
-    const [allProducts] = useRequestData(`https://labeccomerce2.onrender.com/products`)
+
+    const [allProducts] = useRequestData(`https://ecommerce-backend-8st9.onrender.com/products?size=10000000`)
     const allProductsLength = allProducts && allProducts.length
     const numberOfPages = Math.ceil(allProductsLength / 10)
-    const [data, isLoading, error] = useRequestData(`https://labeccomerce2.onrender.com/products?order=${order}&search=${searchedProduct}&page=${page}&size=10`)
+
+    const [data, isLoading, error] = useRequestData(`https://ecommerce-backend-8st9.onrender.com/products?order=${order}&search=${searchedProduct}&page=${page}&size=10`)
     
 
     const handleOnClick = (id, name, price, image_url) => {
@@ -50,6 +52,7 @@ export function Products() {
     }
 
     const handleNextPage = () => {
+        console.log(page)
         if (page !== numberOfPages) {
             setPage(page + 1)
         }
@@ -79,7 +82,7 @@ export function Products() {
                 </form>
 
                 {isLoading && <Loading bgcolor={"purple"}/>}
-                {!isLoading && error && <p>{error}</p>}
+                {!isLoading && !data && error && <p>{error}</p>}
 
                 <section>
                     {!isLoading && data && renderData}

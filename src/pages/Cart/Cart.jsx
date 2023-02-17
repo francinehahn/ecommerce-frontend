@@ -67,7 +67,7 @@ export function Cart() {
                 })
             }
 
-            axios.post('https://labeccomerce2.onrender.com/purchases', body, {
+            axios.post('https://ecommerce-backend-8st9.onrender.com/purchases', body, {
                 headers: {
                     token: token
                 }

@@ -16,7 +16,7 @@ export function ProductInfoForm (props) {
         e.preventDefault()
         setIsLoading(true)
 
-        axios.put(`https://labeccomerce2.onrender.com/products/${props.id}`, form, {
+        axios.put(`https://ecommerce-backend-8st9.onrender.com/products/${props.id}`, form, {
             headers: {
                 token: token
             }
