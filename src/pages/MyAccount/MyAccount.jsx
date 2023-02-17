@@ -22,7 +22,7 @@ export function MyAccount () {
     const [showUserForm, setShowUserForm] = useState(false)
     const [showProductForm, setShowProductForm] = useState(false)
 
-    const [user, isLoadingUser, errorUser] = useRequestData(`https://ecommerce-backend-8st9.onrender.com/users`, token)
+    const [user, isLoadingUser, errorUser] = useRequestData(`https://ecommerce-backend-8st9.onrender.com/users/profile`, token)
     const [purchases, isLoadingPurchases, errorPurchases] = useRequestData(`https://ecommerce-backend-8st9.onrender.com/purchases`, token)
     const [sales, isLoadingSales, errorSales] = useRequestData(`https://ecommerce-backend-8st9.onrender.com/purchases/sales`, token)
     const [productsRegistered, isLoadingProducts, errorProducts] = useRequestData(`https://ecommerce-backend-8st9.onrender.com/products/user`, token)
@@ -78,7 +78,7 @@ export function MyAccount () {
 
                     {!showUserForm && isLoadingUser && <Loading bgcolor={"purple"}/>}
 
-                    {!showUserForm && !isLoadingUser && !data && errorUser && <p>{errorUser}</p>}
+                    {!showUserForm && !isLoadingUser && !user && errorUser && <p>{errorUser}</p>}
 
                     {!showUserForm && !isLoadingUser && user && (
                         <>

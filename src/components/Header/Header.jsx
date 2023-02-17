@@ -16,7 +16,6 @@ export function Header(props) {
     const nav = () => {
         const handleLogout = () => {
             localStorage.removeItem("token")
-            localStorage.removeItem("id")
         }
         
         return (

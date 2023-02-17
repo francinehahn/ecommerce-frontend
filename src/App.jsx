@@ -4,6 +4,14 @@ import { GlobalStyle } from './globalStyle'
 
 
 function App() {
+
+  function closingCode() {
+    localStorage.removeItem("token")
+    return null
+  }
+
+  window.onbeforeunload = closingCode()
+
   return (
     <>
       <GlobalStyle/>
