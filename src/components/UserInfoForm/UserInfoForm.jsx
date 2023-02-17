@@ -1,32 +1,54 @@
 import React from "react"
 import axios from "axios"
-import {FormContainer, PasswordInput} from './style'
-import { useForm } from "../../hooks/useForm"
+import {FormContainer} from './style'
 import { useState } from "react"
 import { Loading } from "../Loading/Loading"
-import {BsEye, BsEyeSlash} from 'react-icons/bs'
 
 
 export function UserInfoForm (props) {
-    const id = localStorage.getItem("id")
     const token = localStorage.getItem("token")
-
-    const [form, onChange] = useForm({email: props.email, password: props.password})
     const [message, setMessage] = useState("")
     const [isLoading, setIsLoading] = useState(false)
-    const [inputType, setInputType] = useState("password")
+    const [password, setPassword] = useState("")
+    const [email, setEmail] = useState(props.email)
 
 
-    const handleSubmit = (e) => {
-        e.preventDefault()
+    const handleEditEmail = (e) => {
         setIsLoading(true)
-        
-        axios.put(`https://ecommerce-backend-8st9.onrender.com/users/${id}/account`, form, {
+        const body = {
+            email: email
+        }
+        axios.put(`https://ecommerce-backend-8st9.onrender.com/users/profile/edit`, body, {
             headers: {
-                token: token
+                Authorization: token
             }
         }).then(() => {
-            setMessage("Informações editadas com sucesso!")
+            setMessage("Email editado com sucesso!")
+            setIsLoading(false)
+        }).catch(error => {
+            setMessage(error.response)
+            setIsLoading(false)
+        })
+    }
+
+    const handleEditPassword = (e) => {
+        setIsLoading(true)
+        if (password === "") {
+            alert("A nova senha não pode estar em branco.")
+            setIsLoading(false)
+            return
+        }
+
+        const body = {
+            password: password
+        }
+
+        axios.put(`https://ecommerce-backend-8st9.onrender.com/users/profile/edit`, body, {
+            headers: {
+                Authorization: token
+            }
+        }).then(() => {
+            setMessage("Senha editada com sucesso!")
             setIsLoading(false)
         }).catch(error => {
             setMessage(error.response)
@@ -36,26 +58,26 @@ export function UserInfoForm (props) {
 
     return (
         props.showForm && (
-            <FormContainer onSubmit={handleSubmit}>
-                <span>
+            <FormContainer>
+                <div>
                     <label htmlFor="email">E-mail</label>
-                    <input type={"email"} name={"email"} value={form.email} onChange={onChange}/>
-                </span>
+                    <span>
+                        <input type={"email"} value={props.email} onChange={e => setEmail(e.target.value)}/>
+                        <button type="button" onClick={handleEditEmail}>{isLoading? <Loading bgcolor={"white"}/> : "Alterar"}</button>
+                    </span>
+                </div>
 
-                <span>
+                <div>
                     <label htmlFor="password">Password</label>
-                    <PasswordInput>
-                        <input type={inputType} name={"password"} value={form.password} onChange={onChange}/>
-                        {inputType === "text"? <BsEye onClick={() => setInputType("password")}/> : <BsEyeSlash onClick={() => setInputType("text")}/>}
-                    </PasswordInput>
-                </span>
+                    <span>
+                        <input type={"password"} placeholder="***********" value={password} onChange={e => setPassword(e.target.value)}/>
+                        <button type="button" onClick={handleEditPassword}>{isLoading? <Loading bgcolor={"white"}/> : "Alterar"}</button>
+                    </span>
+                </div>
 
                 <p>{message}</p>
 
-                <div>
-                    <button type="button" onClick={() => props.setShowForm(false)}>Voltar</button>
-                    <button type="submit"> {isLoading? <Loading bgcolor={"white"}/> : "Enviar"}</button>
-                </div>
+                <button type="button" onClick={() => props.setShowForm(false)}>Voltar</button>
             </FormContainer>
         )   
     )

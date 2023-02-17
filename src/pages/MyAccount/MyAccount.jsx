@@ -74,7 +74,7 @@ export function MyAccount () {
                         <BsFillPencilFill onClick={() => setShowUserForm(true)}/>
                     </span>
 
-                    {showUserForm && <UserInfoForm showForm={showUserForm} setShowForm={setShowUserForm} email={user.email} password={user.password}/>}
+                    {showUserForm && <UserInfoForm showForm={showUserForm} setShowForm={setShowUserForm} email={user.email}/>}
 
                     {!showUserForm && isLoadingUser && <Loading bgcolor={"purple"}/>}
 
