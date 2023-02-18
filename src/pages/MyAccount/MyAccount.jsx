@@ -7,10 +7,9 @@ import { Container, PersonalInfo, PurchasesAndSales } from "./Style"
 import {Loading} from '../../components/Loading/Loading'
 import { PurchaseCard } from "../../components/PurchaseCard/PurchaseCard"
 import {ProductRegisteredCard} from '../../components/ProductRegisteredCard/ProductRegisteredCard'
-import {BsFillPencilFill} from "react-icons/bs"
+import {BsFillPencilFill, BsPlusCircle} from "react-icons/bs"
 import { UserInfoForm } from "../../components/UserInfoForm/UserInfoForm"
 import { ProductInfoForm } from "../../components/ProductInfoForm/ProductInfoForm"
-import {BsPlusCircle} from "react-icons/bs"
 import { useNavigate } from "react-router-dom"
 
 
@@ -26,10 +25,10 @@ export function MyAccount () {
     const [purchases, isLoadingPurchases, errorPurchases] = useRequestData(`https://ecommerce-backend-8st9.onrender.com/purchases`, token)
     const [sales, isLoadingSales, errorSales] = useRequestData(`https://ecommerce-backend-8st9.onrender.com/purchases/sales`, token)
     const [productsRegistered, isLoadingProducts, errorProducts] = useRequestData(`https://ecommerce-backend-8st9.onrender.com/products/user`, token)
-    const [productToBeEdited, setProductToBeEdited] = useState({name: "", price: 0, image_url: ""})
+    const [productToBeEdited, setProductToBeEdited] = useState({id: "", name: "", price: 0, imageUrl: ""})
 
     const navigate = useNavigate()
-    
+
     const renderPurchases = purchases && purchases.map((item, index) => {
         return <PurchaseCard
                     key={index}
@@ -54,10 +53,10 @@ export function MyAccount () {
         return <ProductRegisteredCard
                     key={index}
                     name={item.name}
-                    image_url={item.image_url}
+                    imageUrl={item.image_url}
                     price={item.price}
                     onClick={() => {
-                        setProductToBeEdited({id: item.id, name: item.name, price: item.price, image_url: item.image_url})
+                        setProductToBeEdited({id: item.id, name: item.name, price: item.price, imageUrl: item.image_url})
                         setShowProductForm(true)
                     }}
                 />
@@ -130,7 +129,7 @@ export function MyAccount () {
                         id={productToBeEdited.id}
                         name={productToBeEdited.name}
                         price={productToBeEdited.price}
-                        image_url={productToBeEdited.image_url}
+                        imageUrl={productToBeEdited.imageUrl}
                     />}
 
                     <h3>Minhas vendas</h3>

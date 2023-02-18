@@ -6,7 +6,7 @@ export function ProductCard(props) {
     
     return (
         <Product>
-            <img src={props.image_url} alt={props.name}/>
+            <img src={props.imageUrl} alt={props.name}/>
             <h3>{props.name}</h3>
             <p>Preço: R${price}</p>
             <button onClick={props.onClick}>Comprar</button>

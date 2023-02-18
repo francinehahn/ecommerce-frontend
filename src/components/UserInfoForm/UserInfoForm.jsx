@@ -25,8 +25,8 @@ export function UserInfoForm (props) {
             setMessage("Informações editadas com sucesso!")
             setIsLoading(false)
         }).catch(error => {
-            setMessage(error.response.data)
             setIsLoading(false)
+            alert(error.response.data)
         })
     }
 

@@ -8,7 +8,7 @@ export function ProductRegisteredCard(props) {
 
     return (
         <Product>
-            <img src={props.image_url} alt={props.name}/>
+            <img src={props.imageUrl} alt={props.name}/>
             <div>
                 <h4>{props.name}</h4>
                 <p>Preço: R${price}</p>

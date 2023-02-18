@@ -19,9 +19,8 @@ export function Products() {
     const numberOfPages = Math.ceil(allProductsLength / 10)
 
     const [data, isLoading, error] = useRequestData(`https://ecommerce-backend-8st9.onrender.com/products?order=${order}&search=${searchedProduct}&page=${page}&size=10`)
-    
 
-    const handleOnClick = (id, name, price, image_url) => {
+    const handleOnClick = (id, name, price, imageUrl) => {
         setReload(!reload)
         
         if (JSON.parse(localStorage.getItem("products")) === null) {
@@ -41,7 +40,7 @@ export function Products() {
 
             localStorage.setItem("products", JSON.stringify([...productsInCart]))
         } else {
-            localStorage.setItem("products", JSON.stringify([...productsInCart, {id, name, price, image_url, units: 1}]))
+            localStorage.setItem("products", JSON.stringify([...productsInCart, {id, name, price, imageUrl, units: 1}]))
         }
     }
 
@@ -60,7 +59,7 @@ export function Products() {
 
     const renderData = data && data.map((item, index) => {
         return (
-            <ProductCard key={index} name={item.name} price={item.price} image_url={item.image_url} onClick={() => handleOnClick(item.id, item.name, item.price, item.image_url)}/>
+            <ProductCard key={index} name={item.name} price={item.price} imageUrl={item.image_url} onClick={() => handleOnClick(item.id, item.name, item.price, item.image_url)}/>
         )
     })
 

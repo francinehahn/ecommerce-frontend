@@ -3,7 +3,7 @@ import React, { useState } from "react"
 import { Footer } from "../../components/Footer/Footer"
 import { Header } from "../../components/Header/Header"
 import { Loading } from "../../components/Loading/Loading"
-import { validateImageUrl, validateProductName, validateProductPrice } from "../../constants/constants"
+import { validateImageUrl, validateProductName } from "../../constants/constants"
 import { useForm } from "../../hooks/useForm"
 import { useProtectedPage } from "../../hooks/useProtectedPage"
 import { FormContainer } from "./style"
@@ -12,14 +12,13 @@ import { FormContainer } from "./style"
 export function RegisterProduct () {
     useProtectedPage()
 
-    const [form, onChange, clearInputs] = useForm({name: "", price: "", image_url: ""})
+    const [form, onChange, clearInputs] = useForm({name: "", price: "", imageUrl: ""})
     const [isLoading, setIsLoading] = useState(false)
     const [message, setMessage] = useState("")
     const [invalidNameMessage, setInvalidNameMessage] = useState("")
     const [invalidPriceMessage, setInvalidPriceMessage] = useState("")
     const [invalidUrlMessage, setInvalidUrlMessage] = useState("")
     
-    const id = localStorage.getItem("id")
     const token = localStorage.getItem("token")
 
     const handleRegitration = (e) => {
@@ -31,17 +30,18 @@ export function RegisterProduct () {
             setIsLoading(false)
         }
 
-        if (!validateProductPrice(form.price)) {
+        if (Number(form.price) <= 0) {
             setInvalidPriceMessage("O preço do produto deve ser maior do que zero.")
             setIsLoading(false)
         }
 
-        if (!validateImageUrl(form.image_url)) {
+        if (!validateImageUrl(form.imageUrl)) {
             setInvalidUrlMessage("Url inválida.")
             setIsLoading(false)
         }
 
-        if (validateProductName(form.name) && validateProductPrice(form.price) && validateImageUrl(form.image_url)) {
+        if (validateProductName(form.name) && Number(form.price) > 0 && validateImageUrl(form.imageUrl)) {
+            console.log(form)
             axios.post(`https://ecommerce-backend-8st9.onrender.com/products`, form, {
                 headers: {
                     Authorization: token
@@ -55,11 +55,10 @@ export function RegisterProduct () {
                 setMessage("Produto cadastrado com sucesso!")
             }).catch(error => {
                 setIsLoading(false)
-                clearInputs()
                 setInvalidNameMessage("")
                 setInvalidPriceMessage("")
                 setInvalidUrlMessage("")
-                setMessage(error.response.data)
+                alert(error.response.data)
             })
         }
     }
@@ -83,8 +82,8 @@ export function RegisterProduct () {
                 </div>
 
                 <div>
-                    <label htmlFor="image_url">Url da imagem</label>
-                    <input type={'url'} placeholder="https://www.imagem.com.br" name="image_url" value={form.image_url} onChange={onChange}/>
+                    <label htmlFor="imageUrl">Url da imagem</label>
+                    <input type={'url'} placeholder="https://www.imagem.com.br" name="imageUrl" value={form.imageUrl} onChange={onChange}/>
                     <p>{invalidUrlMessage}</p>
                 </div>
 

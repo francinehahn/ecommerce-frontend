@@ -9,25 +9,24 @@ export function ProductInfoForm (props) {
     const token = localStorage.getItem("token")
    
     const [message, setMessage] = useState("")
-    const [form, onChange] = useForm({name: props.name, price: props.price, image_url: props.image_url})
+    const [form, onChange] = useForm({name: props.name, price: props.price, imageUrl: props.imageUrl})
     const [isLoading, setIsLoading] = useState(false)
-
+    
     const handleSubmit = (e) => {
         e.preventDefault()
         setIsLoading(true)
 
         axios.put(`https://ecommerce-backend-8st9.onrender.com/products/${props.id}`, form, {
             headers: {
-                token: token
+                Authorization: token
             }
-        })
-        .then(() => {
+        }).then(() => {
             setIsLoading(false)
             setMessage("Informações editadas com sucesso!")
         })
         .catch(error => {
             setIsLoading(false)
-            setMessage(error.response.data)
+            alert(error.response.data)
         })
     }
 
@@ -45,8 +44,8 @@ export function ProductInfoForm (props) {
                 </div>
 
                 <div>
-                    <label htmlFor="image_url">Url da imagem</label>
-                    <input type={"text"} name={"image_url"} value={form.image_url} onChange={onChange}/>
+                    <label htmlFor="imageUrl">Url da imagem</label>
+                    <input type={"url"} name={"imageUrl"} value={form.imageUrl} onChange={onChange}/>
                 </div>
 
                 <p>{message}</p>
