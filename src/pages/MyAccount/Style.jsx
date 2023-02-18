@@ -6,17 +6,18 @@ export const Container = styled.section `
 `
 
 export const PersonalInfo = styled.section `
-    padding: 0 5vw;
-    h2 {
-        text-align: center;
-        margin: 8vh 0 4vh 0;
-    }
     span {
         display: flex;
         justify-content: center;
         align-items: baseline;
-        gap: 1vw;
+        gap: 2vw;
+        margin: 0 2vw;
 
+        h2 {
+            text-align: center;
+            margin: 8vh 0 4vh 0;
+        }
+        
         svg {
             width: 20px;
             height: 20px;
@@ -45,7 +46,7 @@ export const PurchasesAndSales = styled.section `
 
     h3 {
         text-align: center;
-        margin: 10vh 0 2vh 0;
+        margin: 6vh 0 2vh 0;
         line-height: 4vh;
     }
 
@@ -53,8 +54,8 @@ export const PurchasesAndSales = styled.section `
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: 1vw;
-        margin-top: 6vh;
+        gap: 2vw;
+        margin-top: 5vh;
         h3 {
             text-align: center;
             margin: 4vh 0 2vh 0;
@@ -75,9 +76,13 @@ export const PurchasesAndSales = styled.section `
     section {
         display: flex;
         padding-bottom: 1vh;
-        gap: 1vw;
         overflow-x: auto;
-        margin-bottom: 6vh;
+        @media screen and (min-width: 1000px) {
+            gap: 1vw;
+        }
+        @media screen and (max-width: 1000px) {
+            gap: 4vw;
+        }
 
         ::-webkit-scrollbar {
             height: 12px;

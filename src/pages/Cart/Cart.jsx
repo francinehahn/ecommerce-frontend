@@ -88,7 +88,7 @@ export function Cart() {
         return (
             <ProductInCart
                 key={index}
-                img={item.image_url}
+                img={item.imageUrl}
                 name={item.name}
                 price={item.price}
                 units={item.units}
@@ -104,6 +104,7 @@ export function Cart() {
             <Header reload={reload}/>
             <Container>
                 {renderData}
+
                 {(!productsInCart || productsInCart.length === 0) && (
                     <span>
                         <p>Carrinho vazio</p>

@@ -3,15 +3,16 @@ import styled from "styled-components"
 
 export const Product = styled.div `
     display: grid;
-    grid-template-columns: 40% 50% 10%;
+    grid-template-columns: 35% 55% 10%;
     border: 1px solid grey;
     border-radius: 5px;
-    min-width: 25vw;
-    min-height: 18vh;
+    min-width: 280px;
+    max-width: 400px;
+
     img {
-        width: 150px;
-        height: 125px;
         border-radius: 5px 0 0 5px;
+        width: 100%;
+        height: 100%;
     }
 
     div {

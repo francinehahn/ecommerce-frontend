@@ -4,10 +4,19 @@ export const Container = styled.section `
     margin-top: 6vh;
 
     @media screen and (min-width: 1000px) {
+        min-height: 59vh;
+    }
+    @media screen and (min-width: 770px) and (max-width: 1000px) {
+        min-height: 65vh;
+    }
+    @media screen and (min-width: 600px) and (max-width: 770px) {
+        min-height: 62vh;
+    }
+    @media screen and (min-width: 500px) and (max-width: 600px) {
         min-height: 58vh;
     }
-    @media screen and (max-width: 1000px) {
-        min-height: 54vh;
+    @media screen and (max-width: 500px) {
+        min-height: 60vh;
     }
 
     span {
@@ -17,11 +26,26 @@ export const Container = styled.section `
         flex-wrap: wrap;
         gap: .8vw;
 
-        @media screen and (min-width: 1000px) {
-            padding: 30vh 0 37vh 0;
+        @media screen and (min-width: 1300px) {
+            padding: 32vh 0 35vh 0;
         }
-        @media screen and (max-width: 1000px) {
-            padding: 27vh 0 34vh 0;
+        @media screen and (min-width: 1100px) and (max-width: 1300px) {
+            padding: 32vh 0 37vh 0;
+        }
+        @media screen and (min-width: 900px) and (max-width: 1100px) {
+            padding: 32vh 0 34vh 0;
+        }
+        @media screen and (min-width: 770px) and (max-width: 900px) {
+            padding: 35vh 0 40vh 0;
+        }
+        @media screen and (min-width: 600px) and (max-width: 770px) {
+            padding: 33vh 0 38vh 0;
+        }
+        @media screen and (min-width: 500px) and (max-width: 600px) {
+            padding: 33vh 0;
+        }
+        @media screen and (max-width: 500px) {
+            padding: 35vh 0;
         }
 
         p {
