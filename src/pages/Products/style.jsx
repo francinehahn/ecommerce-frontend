@@ -46,7 +46,7 @@ export const Container = styled.main `
         div {
             display: flex;
             align-items: center;
-            gap: .5vw;
+            gap: 1vw;
             label {
                 font-size: 16px;
             }
