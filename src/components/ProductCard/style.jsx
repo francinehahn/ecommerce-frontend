@@ -8,7 +8,7 @@ export const Product = styled.div `
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.30);
 
     @media screen and (min-width: 1130px) {
-        height: 380px;
+        height: 360px;
         width: 230px;
     }
     @media screen and (min-width: 910px) and (max-width: 1130px) {
@@ -28,7 +28,7 @@ export const Product = styled.div `
         width: 60vw;
     }
     @media screen and (max-width: 480px) {
-        height: 43vh;
+        height: 45vh;
         width: 75vw;
     }
 
