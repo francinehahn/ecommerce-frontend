@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
 
 export const FormContainer = styled.form `
@@ -24,7 +24,21 @@ export const FormContainer = styled.form `
             border-radius: 5px;
             font-size: 16px;
             padding: 1vh 0 1vh .5vw;
-            width: 35vw;
+            @media screen and (min-width: 1200px) {
+                width: 35vw;
+            }
+            @media screen and (min-width: 1000px) and (max-width: 1200px) {
+                width: 40vw;
+            }
+            @media screen and (min-width: 800px) and (max-width: 1000px) {
+                width: 60vw;
+            }
+            @media screen and (min-width: 600px) and (max-width: 800px) {
+                width: 70vw;
+            }
+            @media screen and (min-width: 200px) and (max-width: 600px) {
+                width: 80vw;
+            }
             :focus {
                 outline: none;
             }
@@ -43,11 +57,22 @@ export const FormContainer = styled.form `
         button {
             border: none;
             border-radius: 5px;
-            padding: 1.4vh 1.2vw;
             background-color: rgb(39, 0, 130);
             color: white;
             font-size: 16px;
             margin-top: 2vh;
+            @media screen and (min-width: 1000px) {
+                padding: 1.4vh 1.2vw;
+            }
+            @media screen and (min-width: 800px) and (max-width: 1000px) {
+                padding: 1.4vh 2.5vw;
+            }
+            @media screen and (min-width: 600px) and (max-width: 800px) {
+                padding: 1.4vh 3vw;
+            }
+            @media screen and (max-width: 600px) {
+                padding: 1.4vh 3.5vw;
+            }
             :hover {
                 opacity: .8;
                 cursor: pointer;
