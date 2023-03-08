@@ -6,6 +6,7 @@ import { Login } from '../pages/Login/Login'
 import { SignUp } from '../pages/SignUp/SignUp'
 import { MyAccount } from '../pages/MyAccount/MyAccount'
 import { RegisterProduct } from '../pages/RegisterProduct/RegisterProduct'
+import { RecoverPassword } from '../pages/RecoverPassword/RecoverPassword'
 
 
 export function Router() {
@@ -17,6 +18,7 @@ export function Router() {
                 <Route path={"/carrinho"} element={<Cart/>}/>
                 <Route path={"/login"} element={<Login/>}/>
                 <Route path={"/criar-conta"} element={<SignUp/>}/>
+                <Route path={"/recuperar-senha"} element={<RecoverPassword/>}/>
                 <Route path={"/cadastrar-produto"} element={<RegisterProduct/>}/>
             </Routes>        
         </BrowserRouter>

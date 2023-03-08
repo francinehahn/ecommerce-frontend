@@ -18,25 +18,6 @@ export const Container = styled.main `
             margin-top: 6vh;
         }
 
-        input {
-            padding: 1vh 1vw;
-            :focus {
-                outline: none;
-            }
-            @media screen and (min-width: 1280px) {
-                width: 35vw;
-            }
-            @media screen and (min-width: 900px) and (max-width: 1280px) {
-                width: 45vw;
-            }
-            @media screen and (min-width: 600px) and (max-width: 900px) {
-                width: 55vw;
-            }
-            @media screen and (max-width: 600px) {
-                width: 85vw;
-            }
-        }
-
         select {
             :focus {
                 outline: none;

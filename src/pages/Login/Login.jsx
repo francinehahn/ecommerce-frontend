@@ -85,6 +85,8 @@ export function Login () {
                     <button>{!isLoading? "Entrar" : <Loading bgcolor={"white"}/>}</button>
                 </form>
 
+                <Link id="recover-pass" to="/recuperar-senha">Esqueci a minha senha</Link>
+                
                 <div>
                     <p>Não possui uma conta?</p>
                     <Link to="/criar-conta">Clique aqui</Link>
