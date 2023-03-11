@@ -47,7 +47,7 @@ https://placid-rabbit.surge.sh/
 <br>
 
 ### Mobile version
-<img src="./src/img/print1-mobile.jpg" width="40%"/>
+<img src="./src/img/print1-mobile.jpeg" width="40%"/>
 <br>
 <img src="./src/img/print2-mobile.jpg" width="40%"/>
 <br>
