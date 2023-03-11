@@ -2,6 +2,7 @@ import styled from "styled-components"
 
 export const Container = styled.main `
     min-height: 71vh;
+    overflow-x: hidden;
     
     form {
         display: flex;
