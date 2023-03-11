@@ -12,10 +12,10 @@ export const Container = styled.main `
         padding: 0 2vw;
 
         @media screen and (min-width: 700px) {
-            margin-top: 8vh;
+            margin-top: 6vh;
         }
         @media screen and (max-width: 700px) {
-            margin-top: 6vh;
+            margin-top: 4vh;
         }
 
         select {
@@ -34,6 +34,26 @@ export const Container = styled.main `
             select {
                 padding: 1vh 1.1vw;
             }
+        }
+    }
+
+    #banner_desktop {
+        @media screen and (min-width: 850px) {
+            width: 100vw;
+            margin-top: 5vh;
+        }
+        @media screen and (max-width: 850px) {
+            display: none;
+        }
+    }
+
+    #banner_mobile {
+        @media screen and (min-width: 850px) {
+            display: none;
+        }
+        @media screen and (max-width: 850px) {
+            width: 100vw;
+            margin-top: 4vh;
         }
     }
 

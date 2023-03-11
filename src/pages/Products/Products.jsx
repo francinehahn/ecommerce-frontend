@@ -6,6 +6,8 @@ import {ProductCard} from '../../components/ProductCard/ProductCard'
 import { useRequestData } from '../../hooks/useRequestData'
 import {Container} from './style'
 import {AiOutlineArrowLeft, AiOutlineArrowRight} from "react-icons/ai"
+import banner_desktop from "../../img/banner_desktop.png"
+import banner_mobile from "../../img/banner_mobile.png"
 
 
 export function Products() {
@@ -79,6 +81,9 @@ export function Products() {
                         </select>
                     </div>
                 </form>
+
+                {!searchedProduct && <img id="banner_desktop" src={banner_desktop} alt="Imagem promocional do dia do consumidor"/>}
+                {!searchedProduct && <img id="banner_mobile" src={banner_mobile} alt="Imagem promocional do dia do consumidor"/>}
 
                 {isLoading && <Loading bgcolor={"purple"}/>}
                 {!isLoading && !data && error && <p>{error}</p>}
