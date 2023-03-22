@@ -32,7 +32,7 @@ export function MyAccount () {
     const renderPurchases = purchases && purchases.map((item, index) => {
         return <PurchaseCard
                     key={index}
-                    name={item.fk_product_id}
+                    name={item.name}
                     quantity={item.quantity}
                     price={item.total_price}
                     date={item.created_at}
