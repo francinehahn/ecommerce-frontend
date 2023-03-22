@@ -1,6 +1,7 @@
 import React from "react"
 import { Container } from "./style"
 
+
 export function PurchaseCard (props) {
     return (
         <Container>

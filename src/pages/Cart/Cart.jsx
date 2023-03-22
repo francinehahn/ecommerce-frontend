@@ -12,7 +12,6 @@ import { Loading } from "../../components/Loading/Loading"
 export function Cart() {
     const token = localStorage.getItem("token")
     let productsInCart = JSON.parse(localStorage.getItem("products")) !== null && JSON.parse(localStorage.getItem("products"))
-    let products = productsInCart
     const [reload, setReload] = useState(true)
     const [isLoading, setIsLoading] = useState(false)
     
@@ -22,33 +21,7 @@ export function Cart() {
         productsInCart = JSON.parse(localStorage.getItem("products"))
     }, [reload])
 
-    const handleReduceUnit = (name) => {
-        for (let product of products) {
-            if (product.name === name && product.units > 1) {
-                product.units -= 1
-            }
-        }
 
-        localStorage.setItem("products", JSON.stringify(products))
-        setReload(!reload)
-    }
-
-    const handleIncreaseUnit = (name) => {
-        for (let product of products) {
-            product.name === name? product.units += 1 : product.units += 0
-        }
-
-        localStorage.setItem("products", JSON.stringify(products))
-        setReload(!reload)
-    }
-
-    const removeProduct = (name) => {
-        products = productsInCart.filter(item => item.name !== name)
-
-        localStorage.setItem("products", JSON.stringify(products))
-        setReload(!reload)
-    }
-    
     const handlePayment = () => {
         if (!productsInCart || productsInCart.length === 0) {
             return
@@ -58,15 +31,14 @@ export function Cart() {
             setIsLoading(true)
             const body = []
             
-            for (let product of products) {
+            for (let product of productsInCart) {
                 body.push({
                     productId: product.id,
                     quantity: product.units
                 })
             }
-            console.log(body)
 
-            axios.post('https://ecommerce-backend-8st9.onrender.com/purchases', body, {
+            axios.post('https://ecommerce-backend-8st9.onrender.com/users/purchases', body, {
                 headers: {
                     Authorization: token
                 }
@@ -92,9 +64,8 @@ export function Cart() {
                 name={item.name}
                 price={item.price}
                 units={item.units}
-                handleReduceUnit={() => handleReduceUnit(item.name)}
-                handleIncreaseUnit={() => handleIncreaseUnit(item.name)}
-                removeProduct={() => removeProduct(item.name)}
+                reload={reload}
+                setReload={setReload}
             />
         )
     })

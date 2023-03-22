@@ -22,17 +22,17 @@ export function MyAccount () {
     const [showProductForm, setShowProductForm] = useState(false)
 
     const [user, isLoadingUser, errorUser] = useRequestData(`https://ecommerce-backend-8st9.onrender.com/users/profile`, token)
-    const [purchases, isLoadingPurchases, errorPurchases] = useRequestData(`https://ecommerce-backend-8st9.onrender.com/purchases`, token)
-    const [sales, isLoadingSales, errorSales] = useRequestData(`https://ecommerce-backend-8st9.onrender.com/purchases/sales`, token)
+    const [purchases, isLoadingPurchases, errorPurchases] = useRequestData(`https://ecommerce-backend-8st9.onrender.com/users/purchases`, token)
+    const [sales, isLoadingSales, errorSales] = useRequestData(`https://ecommerce-backend-8st9.onrender.com/users/sales`, token)
     const [productsRegistered, isLoadingProducts, errorProducts] = useRequestData(`https://ecommerce-backend-8st9.onrender.com/products/user`, token)
     const [productToBeEdited, setProductToBeEdited] = useState({id: "", name: "", price: 0, imageUrl: ""})
 
     const navigate = useNavigate()
-
+    
     const renderPurchases = purchases && purchases.map((item, index) => {
         return <PurchaseCard
                     key={index}
-                    name={item.product_name}
+                    name={item.fk_product_id}
                     quantity={item.quantity}
                     price={item.total_price}
                     date={item.created_at}
