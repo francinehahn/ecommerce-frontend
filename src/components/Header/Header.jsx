@@ -13,11 +13,12 @@ export function Header(props) {
         productsInCart = JSON.parse(localStorage.getItem("products")) !== null && JSON.parse(localStorage.getItem("products")).length
     }, [props.reload])
 
+    const handleLogout = () => {
+        localStorage.removeItem("token")
+        props.setReload(!props.reload)
+    }
+
     const nav = () => {
-        const handleLogout = () => {
-            localStorage.removeItem("token")
-        }
-        
         return (
             <>
                 <Link to="/">Home</Link>

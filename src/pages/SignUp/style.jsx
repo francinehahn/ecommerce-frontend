@@ -12,8 +12,6 @@ export const Container = styled.section `
         div {
             display: flex;
             flex-direction: column;
-            align-items: center;
-            gap: .5vh;
 
             p {
                 font-size: 14px;
