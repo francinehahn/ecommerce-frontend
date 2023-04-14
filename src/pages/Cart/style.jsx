@@ -76,6 +76,5 @@ export const Button = styled.button `
     font-size: 16px;
     color: white;
     padding: 1.5vh;
-    border: none;
-    border-radius: 2px;
+    border-radius: 0px;
 `

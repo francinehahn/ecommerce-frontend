@@ -25,17 +25,13 @@ export const Container = styled.section `
         }
 
         button {
-            border: none;
-            border-radius: 5px;
             background-color: rgb(39, 0, 130);
             color: white;
             font-size: 16px;
             margin-top: 4vh;
+            border-radius: 5px;
             
-            @media screen and (min-width: 1200px) {
-                padding: 1.4vh 1.2vw;
-            }
-            @media screen and (min-width: 900px) and (max-width: 1200px) {
+            @media screen and (min-width: 900px) {
                 padding: 1.4vh 1.5vw;
             }
             @media screen and (min-width: 600px) and (max-width: 900px) {
