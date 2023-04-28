@@ -4,6 +4,7 @@ import {FormContainer} from './style'
 import { useState } from "react"
 import { Loading } from "../Loading/Loading"
 import { useForm } from "../../hooks/useForm"
+import { base_url } from "../../constants/constants"
 
 
 export function UserInfoForm (props) {
@@ -17,7 +18,7 @@ export function UserInfoForm (props) {
         e.preventDefault()
         setIsLoading(true)
       
-        axios.put(`https://ecommerce-backend-8st9.onrender.com/users/profile/edit`, form, {
+        axios.put(`${base_url}users/profile/edit`, form, {
             headers: {
                 Authorization: token
             }

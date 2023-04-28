@@ -2,7 +2,7 @@ import axios from "axios"
 import React, { useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import { Header } from "../../components/Header/Header"
-import { validateEmail, validatePassword } from "../../constants/constants"
+import { base_url, validateEmail, validatePassword } from "../../constants/constants"
 import { useForm } from "../../hooks/useForm"
 import {Loading} from '../../components/Loading/Loading'
 import {Container, PasswordInput} from './style'
@@ -40,7 +40,7 @@ export function Login () {
         if (validateEmail(form.email) && validatePassword(form.password)) {
             const body = {email: form.email, password: form.password}
             
-            axios.post('https://ecommerce-backend-8st9.onrender.com/users/login', body)
+            axios.post(`${base_url}users/login`, body)
             .then(response => {
                 localStorage.setItem("token", response.data.token)
                 setReload(!reload)

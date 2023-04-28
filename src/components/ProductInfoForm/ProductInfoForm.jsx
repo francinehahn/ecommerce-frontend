@@ -3,6 +3,7 @@ import axios from "axios"
 import { useForm } from "../../hooks/useForm"
 import { FormContainer } from "./style"
 import { Loading } from "../Loading/Loading"
+import { base_url } from "../../constants/constants"
 
 
 export function ProductInfoForm (props) {
@@ -16,7 +17,7 @@ export function ProductInfoForm (props) {
         e.preventDefault()
         setIsLoading(true)
 
-        axios.put(`https://ecommerce-backend-8st9.onrender.com/products/${props.id}`, form, {
+        axios.put(`${base_url}products/${props.id}`, form, {
             headers: {
                 Authorization: token
             }

@@ -11,6 +11,7 @@ import {BsFillPencilFill, BsPlusCircle} from "react-icons/bs"
 import { UserInfoForm } from "../../components/UserInfoForm/UserInfoForm"
 import { ProductInfoForm } from "../../components/ProductInfoForm/ProductInfoForm"
 import { useNavigate } from "react-router-dom"
+import { base_url } from "../../constants/constants"
 
 
 export function MyAccount () {
@@ -21,10 +22,10 @@ export function MyAccount () {
     const [showUserForm, setShowUserForm] = useState(false)
     const [showProductForm, setShowProductForm] = useState(false)
 
-    const [user, isLoadingUser, errorUser] = useRequestData(`https://ecommerce-backend-8st9.onrender.com/users/profile`, token)
-    const [purchases, isLoadingPurchases, errorPurchases] = useRequestData(`https://ecommerce-backend-8st9.onrender.com/users/purchases`, token)
-    const [sales, isLoadingSales, errorSales] = useRequestData(`https://ecommerce-backend-8st9.onrender.com/users/sales`, token)
-    const [productsRegistered, isLoadingProducts, errorProducts] = useRequestData(`https://ecommerce-backend-8st9.onrender.com/products/user`, token)
+    const [user, isLoadingUser, errorUser] = useRequestData(`${base_url}users/profile`, token)
+    const [purchases, isLoadingPurchases, errorPurchases] = useRequestData(`${base_url}users/purchases`, token)
+    const [sales, isLoadingSales, errorSales] = useRequestData(`${base_url}users/sales`, token)
+    const [productsRegistered, isLoadingProducts, errorProducts] = useRequestData(`${base_url}products/user`, token)
     const [productToBeEdited, setProductToBeEdited] = useState({id: "", name: "", price: 0, imageUrl: ""})
 
     const navigate = useNavigate()

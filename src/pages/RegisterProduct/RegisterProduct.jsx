@@ -3,7 +3,7 @@ import React, { useState } from "react"
 import { Footer } from "../../components/Footer/Footer"
 import { Header } from "../../components/Header/Header"
 import { Loading } from "../../components/Loading/Loading"
-import { validateImageUrl, validateProductName } from "../../constants/constants"
+import { base_url, validateImageUrl, validateProductName } from "../../constants/constants"
 import { useForm } from "../../hooks/useForm"
 import { useProtectedPage } from "../../hooks/useProtectedPage"
 import { FormContainer } from "./style"
@@ -41,8 +41,7 @@ export function RegisterProduct () {
         }
 
         if (validateProductName(form.name) && Number(form.price) > 0 && validateImageUrl(form.imageUrl)) {
-            console.log(form)
-            axios.post(`https://ecommerce-backend-8st9.onrender.com/products`, form, {
+            axios.post(`${base_url}products`, form, {
                 headers: {
                     Authorization: token
                 }

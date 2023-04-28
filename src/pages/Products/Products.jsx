@@ -8,6 +8,7 @@ import {Container} from './style'
 import {AiOutlineArrowLeft, AiOutlineArrowRight} from "react-icons/ai"
 import banner_desktop from "../../img/banner_desktop.png"
 import banner_mobile from "../../img/banner_mobile.png"
+import { base_url } from '../../constants/constants'
 
 
 export function Products() {
@@ -16,11 +17,11 @@ export function Products() {
     const [reload, setReload] = useState(false)
     const [page, setPage] = useState(1)
 
-    const [allProducts] = useRequestData(`https://ecommerce-backend-8st9.onrender.com/products?size=10000000`)
+    const [allProducts] = useRequestData(`${base_url}products?size=10000000`)
     const allProductsLength = allProducts && allProducts.length
     const numberOfPages = Math.ceil(allProductsLength / 10)
 
-    const [data, isLoading, error] = useRequestData(`https://ecommerce-backend-8st9.onrender.com/products?order=${order}&search=${searchedProduct}&page=${page}&size=10`)
+    const [data, isLoading, error] = useRequestData(`${base_url}products?order=${order}&search=${searchedProduct}&page=${page}&size=10`)
 
     const handleOnClick = (id, name, price, imageUrl) => {
         setReload(!reload)

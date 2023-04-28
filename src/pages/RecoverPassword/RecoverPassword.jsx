@@ -3,6 +3,7 @@ import React, { useState } from "react"
 import { Header } from "../../components/Header/Header"
 import { Container } from "./style"
 import { Loading } from "../../components/Loading/Loading"
+import { base_url } from "../../constants/constants"
 
 
 export function RecoverPassword () {
@@ -15,7 +16,7 @@ export function RecoverPassword () {
         e.preventDefault()
         setIsLoading(true)
 
-        axios.patch('https://ecommerce-backend-8st9.onrender.com/users/recoverPassword', {email})
+        axios.patch(`${base_url}users/recoverPassword`, {email})
         .then(() => {
             setIsLoading(false)
             setSuccessMessage("Email enviado com sucesso!")

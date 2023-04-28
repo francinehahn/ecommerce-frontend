@@ -7,6 +7,7 @@ import {CgSmileSad} from "react-icons/cg"
 import { useNavigate } from "react-router-dom"
 import axios from "axios"
 import { Loading } from "../../components/Loading/Loading"
+import { base_url } from "../../constants/constants"
 
 
 export function Cart() {
@@ -38,7 +39,7 @@ export function Cart() {
                 })
             }
 
-            axios.post('https://ecommerce-backend-8st9.onrender.com/users/purchases', body, {
+            axios.post(`${base_url}users/purchases`, body, {
                 headers: {
                     Authorization: token
                 }

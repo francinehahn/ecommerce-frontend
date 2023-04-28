@@ -1,3 +1,5 @@
+export const base_url = "https://ecommerce-backend-eta.vercel.app/"
+
 export const validateName = name => /(?=^.{2,60}$)^[A-Z][a-z]+(?:[ ](?:das?|dos?|de|e|[A-Z][a-z]+))*$/.test(name)
 export const validateEmail = email => /[a-zA-Z0-9]+@[a-z]{3}[.a-z]?/.test(email)
 export const validatePassword = password => /.{6,}/.test(password)

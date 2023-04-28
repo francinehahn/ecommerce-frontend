@@ -3,7 +3,7 @@ import React, { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { Header } from "../../components/Header/Header"
 import { Loading } from "../../components/Loading/Loading"
-import { validateEmail, validateName, validatePassword } from "../../constants/constants"
+import { base_url, validateEmail, validateName, validatePassword } from "../../constants/constants"
 import { useForm } from "../../hooks/useForm"
 import { Container, PasswordInput } from "./style"
 import { BsEye, BsEyeSlash } from "react-icons/bs"
@@ -56,7 +56,7 @@ export function SignUp () {
         if (validateName(form.name) && validatePassword(form.password) && form.password === form.confirmPassword) {
             const body = {name: form.name, email: form.email, password: form.password}
 
-            axios.post('https://ecommerce-backend-8st9.onrender.com/users/signup', body)
+            axios.post(`${base_url}users/signup`, body)
             .then(() => {
                 setSuccessMessage("Conta criada com sucesso!")
                 setIsLoading(false)
