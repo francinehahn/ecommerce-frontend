@@ -1,4 +1,4 @@
-# e-commerce LabEcommerce
+<h1 align="center">Labecommerce</h1>
 
 This is an exercise to practice some of the following technologies:
 * JavaScript
@@ -22,8 +22,8 @@ Data was consumed from an API Rest developed by me. The link of the github repos
 * After completing the order, the shopping cart is emptied; 
 * The project is responsive to all screen sizes.
 
-## Link Surge
-https://young-plastic.surge.sh/
+## Deploy
+https://ecommerce-frontend-eight.vercel.app/
 
 ## Images
 ### Desktop version
