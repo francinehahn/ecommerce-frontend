@@ -3,20 +3,22 @@ import styled from "styled-components"
 export const Container = styled.main `
     min-height: 71vh;
     overflow-x: hidden;
+    margin: 2rem 0;
     
     form {
         display: flex;
         align-items: center;
         justify-content: center;
         flex-wrap: wrap;
-        gap: 5vw;
-        padding: 0 2vw;
+        gap: 5rem;
+        padding: 0 2rem;
+        margin-bottom: 2rem;
 
-        @media screen and (min-width: 700px) {
-            margin-top: 6vh;
+        @media screen and (max-width: 1000px) {
+            gap: 2rem;
         }
         @media screen and (max-width: 700px) {
-            margin-top: 4vh;
+            gap: 1rem;
         }
 
         select {
@@ -28,33 +30,27 @@ export const Container = styled.main `
         div {
             display: flex;
             align-items: center;
-            gap: 1vw;
+            gap: 1rem;
             label {
-                font-size: 16px;
+                font-size: 1rem;
             }
             select {
-                padding: 1vh 1.1vw;
+                padding: .5rem 1rem;
             }
         }
     }
 
     #banner_desktop {
-        @media screen and (min-width: 850px) {
-            width: 100vw;
-            margin-top: 5vh;
-        }
+        width: 100vw;
         @media screen and (max-width: 850px) {
             display: none;
         }
     }
 
     #banner_mobile {
+        width: 100vw;
         @media screen and (min-width: 850px) {
             display: none;
-        }
-        @media screen and (max-width: 850px) {
-            width: 100vw;
-            margin-top: 4vh;
         }
     }
 
@@ -62,14 +58,12 @@ export const Container = styled.main `
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        
-        @media screen and (min-width: 700px) {
-            margin: 8vh 4vw 6vh 4vw;
-            gap: 3vw;
-        }
+        margin: 4rem;
+        gap: 2.5rem;
+
         @media screen and (max-width: 700px) {
-            margin: 4vh 4vw 4vh 4vw;
-            gap: 6vw;
+            margin: 2rem;
+            gap: 1rem;
         }
     }
 
@@ -77,14 +71,13 @@ export const Container = styled.main `
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-bottom: 6vh;
-        gap: 1vw;
+        gap: 1rem;
         p {
-            font-size: 18px;
+            font-size: 1.13rem;
         }
         svg {
-            width: 20px;
-            min-height: 20px;
+            width: 1.25rem;
+            min-height: 1.25rem;
             :hover {
                 opacity: .5;
                 cursor: pointer;
