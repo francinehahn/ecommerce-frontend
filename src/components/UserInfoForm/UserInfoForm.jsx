@@ -5,6 +5,7 @@ import { useState } from "react"
 import { Loading } from "../Loading/Loading"
 import { useForm } from "../../hooks/useForm"
 import { base_url } from "../../constants/constants"
+import Swal from "sweetalert2"
 
 
 export function UserInfoForm (props) {
@@ -27,7 +28,7 @@ export function UserInfoForm (props) {
             setIsLoading(false)
         }).catch(error => {
             setIsLoading(false)
-            alert(error.response.data)
+            Swal.fire(error.response.data)
         })
     }
 
