@@ -4,6 +4,7 @@ import { useForm } from "../../hooks/useForm"
 import { FormContainer } from "./style"
 import { Loading } from "../Loading/Loading"
 import { base_url } from "../../constants/constants"
+import Swal from "sweetalert2"
 
 
 export function ProductInfoForm (props) {
@@ -27,7 +28,7 @@ export function ProductInfoForm (props) {
         })
         .catch(error => {
             setIsLoading(false)
-            alert(error.response.data)
+            Swal.fire(error.response.data)
         })
     }
 

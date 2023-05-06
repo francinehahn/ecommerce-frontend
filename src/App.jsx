@@ -9,7 +9,7 @@ function App() {
   const token = localStorage.getItem("token")
   
   if (token) {
-    const [isLoadingUserData, userData, userError] = useRequestData(`${base_url}users/profile`, token)
+    const [userData, isLoadingUserData, userError] = useRequestData(`${base_url}users/profile`, token)
     if (!isLoadingUserData && !userData && userError) {
       localStorage.removeItem("token")
     }

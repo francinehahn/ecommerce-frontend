@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom"
 import axios from "axios"
 import { Loading } from "../../components/Loading/Loading"
 import { base_url } from "../../constants/constants"
+import Swal from "sweetalert2"
 
 
 export function Cart() {
@@ -47,9 +48,10 @@ export function Cart() {
                 setIsLoading(false)
                 localStorage.removeItem("products")
                 setReload(!reload)
-                alert("Pagamento realizado com sucesso!")
+                Swal.fire("Pagamento realizado com sucesso!")
             }).catch(error => {
-                alert(error.response.data)
+                console.log(error)
+                Swal.fire(error.response.data)
                 setIsLoading(false)
             })
         }

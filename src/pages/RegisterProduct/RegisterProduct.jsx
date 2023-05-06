@@ -7,6 +7,7 @@ import { base_url, validateImageUrl, validateProductName } from "../../constants
 import { useForm } from "../../hooks/useForm"
 import { useProtectedPage } from "../../hooks/useProtectedPage"
 import { FormContainer } from "./style"
+import Swal from "sweetalert2"
 
 
 export function RegisterProduct () {
@@ -57,7 +58,7 @@ export function RegisterProduct () {
                 setInvalidNameMessage("")
                 setInvalidPriceMessage("")
                 setInvalidUrlMessage("")
-                alert(error.response.data)
+                Swal.fire(error.response.data)
             })
         }
     }
