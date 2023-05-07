@@ -5,51 +5,46 @@ export const Container = styled.section `
     display: flex;
     flex-direction: column;
     align-items: center;
-    
-    h2 {
-        margin: 8vh 0 2vh 0;
+    margin: 5rem 2rem;
+    gap: 1rem;
+
+    @media screen and (max-width: 640px) {
+        align-items: flex-start;
     }
 
     form {
         display: flex;
-        gap: .5vw;
-        margin-top: 3vh;
+        flex-wrap: wrap;
+        gap: .5rem;
 
         button {
             border: none;
-            border-radius: 5px;
+            border-radius: 3px;
             background-color: rgb(39, 0, 130);
             color: white;
-            font-size: 16px;
+            font-size: 1rem;
+            padding: 0 1rem;
+
+            @media screen and (max-width: 570px) {
+                padding: .7rem 1rem;
+            }
+
             :hover {
                 opacity: .8;
                 cursor: pointer;
-            }
-
-            @media screen and (min-width: 1200px) {
-                padding: 1.4vh 1.2vw;
-            }
-            @media screen and (min-width: 900px) and (max-width: 1200px) {
-                padding: 1.4vh 1.5vw;
-            }
-            @media screen and (min-width: 600px) and (max-width: 900px) {
-                padding: 1.4vh 2.5vw;
-            }
-            @media screen and (max-width: 600px) {
-                padding: 1.4vh 3.5vw;
             }
         }
     }
 
     #error {
         color: red;
-        margin-top: 2vh;
-        font-size: 14px;
+        margin-top: .5rem;
+        font-size: .875rem;
     }
 
     #success {
         color: green;
-        margin-top: 2vh;
-        font-size: 14px;
+        margin-top: .5rem;
+        font-size: .875rem;
     }
 `

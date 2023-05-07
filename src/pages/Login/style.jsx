@@ -6,39 +6,34 @@ export const Container = styled.section `
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 2vh;
-        margin-top: 15vh;
+        gap: .8rem;
+        margin-top: 8rem;
 
         div {
             display: flex;
             flex-direction: column;
-            gap: .5vh;
+
             span {
-                font-size: 14px;
+                font-size: .875rem;
                 color: red;
             }
         }
 
         p {
-            font-size: 14px;
+            font-size: .875rem;
             color: red;
         }
 
         button {
             background-color: rgb(39, 0, 130);
             color: white;
-            font-size: 16px;
-            margin-top: 4vh;
-            border-radius: 5px;
-            
-            @media screen and (min-width: 900px) {
-                padding: 1.4vh 1.5vw;
-            }
-            @media screen and (min-width: 600px) and (max-width: 900px) {
-                padding: 1.4vh 2.5vw;
-            }
-            @media screen and (max-width: 600px) {
-                padding: 1.4vh 3.5vw;
+            font-size: 1rem;
+            border-radius: 3px;
+            width: 25rem;
+            padding: .7rem 0;
+
+            @media screen and (max-width: 800px) {
+                width: 20rem;
             }
         }
     }
@@ -46,62 +41,15 @@ export const Container = styled.section `
     #recover-pass {
         display: flex;
         justify-content: center;
-        margin-top: 5vh;
+        margin-top: 2rem;
     }
 
     div {
         display: flex;
         justify-content: center;
-        gap: .5vw;
+        gap: .3rem;
         p, a {
-            margin-top: 3vh;
-        }
-    }
-`
-
-export const PasswordInput = styled.span `
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    border: 1px solid grey;
-    border-radius: 2px;
-
-    @media screen and (min-width: 1200px) {
-        width: 30vw;
-    }
-    @media screen and (min-width: 1000px) and (max-width: 1200px) {
-        width: 35vw;
-    }
-    @media screen and (min-width: 800px) and (max-width: 1000px) {
-        width: 45vw;
-    }
-    @media screen and (min-width: 600px) and (max-width: 800px) {
-        width: 60vw;
-    }
-    @media screen and (max-width: 600px) {
-        width: 80vw;
-    }
-    
-    input {
-        border: none;
-    }
-
-    svg {
-        color: #515151;
-        height: 20px;
-        width: 20px;
-        @media screen and (min-width: 1100px) {
-            margin: .5vh .5vw;
-        }
-        @media screen and (min-width: 500px) and (max-width: 1100px) {
-            margin: .5vh 1vw;
-        }
-        @media screen and (max-width: 500px) {
-            margin: .5vh 1.5vw;
-        }
-        :hover {
-            opacity: .7;
-            cursor: pointer;
+            margin-top: 1rem;
         }
     }
 `
