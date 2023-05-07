@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components"
-
+import styled from "styled-components"
 
 export const GlobalStyle = createGlobalStyle`
     * {
@@ -24,28 +24,16 @@ export const GlobalStyle = createGlobalStyle`
         }
 
         input {
-            width: 25vw;
-            font-size: 16px;
-            padding: 1vh .5vw;
-
+            width: 25rem;
+            font-size: 1rem;
+            padding: .5rem;
+            
             :focus {
                 outline: none;
             }
 
-            @media screen and (min-width: 1200px) {
-                width: 30vw;
-            }
-            @media screen and (min-width: 1000px) and (max-width: 1200px) {
-                width: 35vw;
-            }
-            @media screen and (min-width: 800px) and (max-width: 1000px) {
-                width: 45vw;
-            }
-            @media screen and (min-width: 600px) and (max-width: 800px) {
-                width: 60vw;
-            }
-            @media screen and (max-width: 600px) {
-                width: 80vw;
+            @media screen and (max-width: 800px) {
+                width: 20rem;
             }
         }
 
@@ -55,6 +43,35 @@ export const GlobalStyle = createGlobalStyle`
                 opacity: .8;
                 cursor: pointer;
             }
+        }
+    }
+`
+
+export const PasswordInput = styled.span `
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    border: 1px solid grey;
+    border-radius: 2px;
+    width: 25rem;
+    
+    @media screen and (max-width: 800px) {
+        width: 20rem;
+    }
+    
+    input {
+        border: none;
+    }
+
+    svg {
+        color: #515151;
+        height: 1.25rem;
+        width: 1.25rem;
+        margin: .5rem;
+
+        :hover {
+            opacity: .7;
+            cursor: pointer;
         }
     }
 `

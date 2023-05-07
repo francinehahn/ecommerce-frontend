@@ -6,43 +6,23 @@ export const HeaderSection = styled.header `
     display: flex;
     justify-content: space-around;
     align-items: center;
-    flex-wrap: wrap;
     position: sticky;
     top: 0;
+    z-index: 10000;
 
     img {
-        @media screen and (min-width: 1280px) {
-            width: 14%;
-        }
-        @media screen and (min-width: 980px) and (max-width: 1280px) {
-            width: 17%;
-            margin: 0 2vw 0 2vw;
-        }
-        @media screen and (min-width: 800px) and (max-width: 980px) {
-            width: 28%;
-            margin-right: 6vw;
-        }
-        @media screen and (min-width: 600px) and (max-width: 800px) {
-            width: 30%;
-            margin-right: 5vw;
-        }
-        @media screen and (min-width: 500px) and (max-width: 600px) {
-            width: 40%;
-            margin-right: 5vw;
-        }
-        @media screen and (max-width: 500px) {
-            width: 47%;
-            margin-right: 5vw;
-        }
+        width: 12rem;
+        padding: .2rem 0;
     }
 `
 
 export const NavDesktop = styled.nav `    
     @media screen and (min-width: 600px) {
         display: flex;
-        gap: 4vw;
+        gap: 2.5rem;
+
         a {
-            font-size: 14px;
+            font-size: .875rem;
             color: white;
             text-decoration: none;
             :hover {
@@ -53,17 +33,19 @@ export const NavDesktop = styled.nav `
         span {
             display: flex;
             align-items: center;
-            gap: .5vw;
+            gap: .5rem;
+
             svg {
                 color: white;
-                height: 20px;
-                width: 20px;
+                height: 1.25rem;
+                width: 1.25rem;
             }
+
             p {
-                font-size: 14px;
+                font-size: .7rem;
                 background-color: white;
-                padding: 0 5px;
-                margin: -17px 0 0 -8px;
+                padding: .1rem .35rem;
+                margin: -1rem 0 0 -.5rem;
                 border-radius: 50%;
             }
         }   
@@ -81,19 +63,22 @@ export const NavMobile = styled.nav `
     left: 0;
     height: 100vh;
     width: 100vw;
+
     button {
-        margin: 1.7vh 0 4vh 80vw;
-        padding: 5px 11px;
+        margin: 1.2rem 0 2rem 80vw;
+        padding: .4rem .8rem;
         border-radius: 4px;
-        font-size: 16px;
+        font-size: 1rem;
     }
+
     div {
         display: flex;
         flex-direction: column;
         align-items: center;
+
         a {
-            font-size: 18px;
-            line-height: 6vh;
+            font-size: 1.125rem;
+            line-height: 3rem;
             color: white;
             text-decoration: none;
         }
@@ -101,17 +86,19 @@ export const NavMobile = styled.nav `
         span {
             display: flex;
             align-items: center;
-            gap: .5vw;
+            gap: .4rem;
+
             svg {
                 color: white;
-                height: 30px;
-                width: 30px;
+                height: 1.875rem;
+                width: 1.875rem;
             }
+
             p {
-                font-size: 16px;
+                font-size: 1rem;
                 background-color: white;
-                padding: 0 6px;
-                margin: -25px 0 0 -5px;
+                padding: .15rem .5rem;
+                margin: -1.5rem 0 0 -.1rem;
                 border-radius: 50%;
             }
         }
@@ -126,12 +113,13 @@ export const MobileSymbol = styled.div `
     @media screen and (max-width: 600px) {
         display: flex;
         flex-direction: column;
-        gap: 5px;
+        gap: .285rem;
+
         div {
             background-color: white;
-            width: 35px;
-            height: 5px;
-            border-radius: 4px;
+            width: 2.187rem;
+            height: .26rem;
+            border-radius: .25rem;
         }
     }
 `

@@ -5,8 +5,9 @@ import { Header } from "../../components/Header/Header"
 import { base_url, validateEmail, validatePassword } from "../../constants/constants"
 import { useForm } from "../../hooks/useForm"
 import {Loading} from '../../components/Loading/Loading'
-import {Container, PasswordInput} from './style'
+import {Container} from './style'
 import {BsEye, BsEyeSlash} from 'react-icons/bs'
+import { PasswordInput } from "../../globalStyle"
 
 
 export function Login () {

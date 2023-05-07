@@ -5,8 +5,9 @@ import { Header } from "../../components/Header/Header"
 import { Loading } from "../../components/Loading/Loading"
 import { base_url, validateEmail, validateName, validatePassword } from "../../constants/constants"
 import { useForm } from "../../hooks/useForm"
-import { Container, PasswordInput } from "./style"
+import { Container } from "./style"
 import { BsEye, BsEyeSlash } from "react-icons/bs"
+import { PasswordInput } from "../../globalStyle"
 
 
 export function SignUp () {
@@ -106,8 +107,8 @@ export function SignUp () {
                     
                     <button>{!isLoading? "Criar conta" : <Loading bgcolor={"white"}/>}</button>
 
-                    <span>{successMessage}</span>
-                    <span>{axiosError}</span>
+                    <span id="successMessage">{successMessage}</span>
+                    <span id="axiosError">{axiosError}</span>
                 </form>
             </Container>
         </>

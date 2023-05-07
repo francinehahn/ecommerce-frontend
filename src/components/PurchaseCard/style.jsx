@@ -6,11 +6,12 @@ export const Container = styled.div `
     flex-direction: column;
     align-items: center;
     border: 1px solid gray;
-    border-radius: 5px;
-    padding: 1.5vh 1vw;
-    min-width: 300px;
+    border-radius: 3px;
+    padding: .5rem;
+    min-width: 18.75rem;
+
     p {
-        font-size: 16px;
-        line-height: 4vh;
+        font-size: 1rem;
+        line-height: 2rem;
     }
 `

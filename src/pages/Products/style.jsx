@@ -3,16 +3,15 @@ import styled from "styled-components"
 export const Container = styled.main `
     min-height: 71vh;
     overflow-x: hidden;
-    margin: 2rem 0;
+    margin: 1.5rem 0 2rem 0;
     
-    form {
+    span {
         display: flex;
         align-items: center;
         justify-content: center;
         flex-wrap: wrap;
         gap: 5rem;
-        padding: 0 2rem;
-        margin-bottom: 2rem;
+        margin: 0 2rem 1.5rem 2rem;
 
         @media screen and (max-width: 1000px) {
             gap: 2rem;
@@ -31,6 +30,8 @@ export const Container = styled.main `
             display: flex;
             align-items: center;
             gap: 1rem;
+            margin-bottom: 0;
+
             label {
                 font-size: 1rem;
             }
@@ -62,7 +63,7 @@ export const Container = styled.main `
         gap: 2.5rem;
 
         @media screen and (max-width: 700px) {
-            margin: 2rem;
+            margin: 2rem 1rem;
             gap: 1rem;
         }
     }

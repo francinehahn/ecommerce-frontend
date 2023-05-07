@@ -5,12 +5,12 @@ export const Product = styled.div `
     display: grid;
     grid-template-columns: 35% 55% 10%;
     border: 1px solid grey;
-    border-radius: 5px;
-    min-width: 280px;
-    max-width: 400px;
+    border-radius: 3px;
+    min-width: 17.5rem;
+    max-width: 25rem;
 
     img {
-        border-radius: 5px 0 0 5px;
+        border-radius: 3px 0 0 3px;
         width: 100%;
         height: 100%;
     }
@@ -20,20 +20,22 @@ export const Product = styled.div `
         flex-direction: column;
         justify-content: center;
         padding: 0 1vw;
+
         h4 {
-            font-size: 16px;
-            line-height: 4vh;
+            font-size: 1rem;
+            line-height: 2rem;
         }
+
         p {
-            font-size: 16px;
+            font-size: .9rem;
             text-align: left;
         }
     }
 
     svg {
-        margin: auto 1vw auto 0;
-        height: 18px;
-        width: 18px;
+        margin: auto 0;
+        height: 1.1rem;
+        width: 1.1rem;
         display: block;
         :hover {
             opacity: .5;

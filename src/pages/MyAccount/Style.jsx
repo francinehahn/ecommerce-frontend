@@ -1,26 +1,52 @@
 import styled from "styled-components"
 
-export const Container = styled.section `
+export const Container = styled.div `
     min-height: 73vh;
-    margin-bottom: 8vh;
+    margin: 3.5rem 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+
+    @media screen and (max-width: 800px) {
+        margin: 3.5rem 2rem;
+    }
+
+    h3 {
+        text-align: center;
+        margin-bottom: 1rem;
+        line-height: 2rem;
+        font-size: 1.5rem;
+
+        @media screen and (max-width: 800px) {
+            font-size: 1.2rem;
+        }
+    }
 `
 
 export const PersonalInfo = styled.section `
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+
     span {
         display: flex;
         justify-content: center;
         align-items: baseline;
-        gap: 2vw;
-        margin: 0 2vw;
+        gap: 1rem;
 
         h2 {
             text-align: center;
-            margin: 8vh 0 4vh 0;
+            font-size: 1.5rem;
+
+            @media screen and (max-width: 800px) {
+                font-size: 1.2rem;
+            }
         }
         
         svg {
-            width: 20px;
-            height: 20px;
+            width: 1.25rem;
+            height: 1.25rem;
             :hover {
                 opacity: .5;
                 cursor: pointer;
@@ -29,43 +55,59 @@ export const PersonalInfo = styled.section `
     }
 
     div {
-        display: flex;
-        justify-content: center;
-        gap: .5vw;
-        p {
-            text-align: center;
-            line-height: 4vh;
+        div {
+            display: flex;
+            justify-content: center;
+            gap: .5rem;
+            
+            p {
+                text-align: center;
+                line-height: 2rem;
+                font-size: 1rem;
+            }
         }
     }
 `
 
-export const PurchasesAndSales = styled.section `
-    margin: 0 5vw;
-    display: flex;
-    flex-direction: column;
+export const Purchases = styled.section `
+    #purchases {
+        display: flex;
+        gap: 1rem;
+        padding-bottom: 1rem;
+        overflow-x: auto;
 
-    h3 {
-        text-align: center;
-        margin: 6vh 0 2vh 0;
-        line-height: 4vh;
+        ::-webkit-scrollbar {
+            height: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #eeeeee;
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #cdcdcd;
+            border-radius: 20px;
+        }
     }
 
+    p {
+        text-align: center;
+    }
+`
+
+export const ProductsRegistered = styled.section `
     span {
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: 2vw;
-        margin-top: 5vh;
-        h3 {
-            text-align: center;
-            margin: 4vh 0 2vh 0;
-            line-height: 4vh;
-        }
+        gap: 1rem;
+
         svg {
-            width: 30px;
-            height: 30px;
-            margin-top: 2vh;
+            width: 1.875rem;
+            height: 1.875rem;
             color: green;
+            margin-bottom: 1rem;
             :hover {
                 opacity: .5;
                 cursor: pointer;
@@ -73,33 +115,55 @@ export const PurchasesAndSales = styled.section `
         }
     }
 
-    section {
+    p {
+        text-align: center;
+    }
+
+    #productsRegistered {
         display: flex;
-        padding-bottom: 1vh;
+        gap: 1rem;
+        padding-bottom: 1rem;
         overflow-x: auto;
-        @media screen and (min-width: 1000px) {
-            gap: 1vw;
-        }
-        @media screen and (max-width: 1000px) {
-            gap: 4vw;
-        }
 
         ::-webkit-scrollbar {
             height: 12px;
         }
 
         ::-webkit-scrollbar-track {
-            background: #E2E2E2;
+            background: #eeeeee;
             width: 8px;
         }
 
         ::-webkit-scrollbar-thumb {
-            background-color: #c2c2c2;
+            background-color: #cdcdcd;
             border-radius: 20px;
         }
     }
+`
 
+export const Sales = styled.section `
     p {
         text-align: center;
+    }
+
+    #sales {
+        display: flex;
+        gap: 1rem;
+        padding-bottom: 1rem;
+        overflow-x: auto;
+
+        ::-webkit-scrollbar {
+            height: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #eeeeee;
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #cdcdcd;
+            border-radius: 20px;
+        }
     }
 `

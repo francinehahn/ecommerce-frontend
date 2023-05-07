@@ -48,8 +48,8 @@ export function UserInfoForm (props) {
                 <p>{message}</p>
 
                 <span>
-                    <button onClick={handleEditUserInfo}>{isLoading? <Loading bgcolor={"white"}/> : "Enviar"}</button>
                     <button type="button" onClick={() => props.setShowForm(false)}>Voltar</button>
+                    <button onClick={handleEditUserInfo}>{isLoading? <Loading bgcolor={"white"}/> : "Enviar"}</button>
                 </span>
             </FormContainer>
         )   

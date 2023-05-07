@@ -69,30 +69,30 @@ export function RegisterProduct () {
 
             <FormContainer>
                 <h3>Cadastrar novo produto:</h3>
-                <div>
-                    <label htmlFor="name">Nome do produto</label>
-                    <input type={'text'} placeholder="Vestido vermelho tamanho 36" name="name" value={form.name} onChange={onChange}/>
-                    <p>{invalidNameMessage}</p>
-                </div>
+                <form>
+                    <div>
+                        <label htmlFor="name">Nome do produto</label>
+                        <input type={'text'} placeholder="Vestido vermelho tamanho 36" name="name" value={form.name} onChange={onChange}/>
+                        <p>{invalidNameMessage}</p>
+                    </div>
 
-                <div>
-                    <label htmlFor="price">Preço</label>
-                    <input type={'number'} placeholder="129,90" name="price" value={form.price} onChange={onChange}/>
-                    <p>{invalidPriceMessage}</p>
-                </div>
+                    <div>
+                        <label htmlFor="price">Preço</label>
+                        <input type={'number'} placeholder="129,90" name="price" value={form.price} onChange={onChange}/>
+                        <p>{invalidPriceMessage}</p>
+                    </div>
 
-                <div>
-                    <label htmlFor="imageUrl">Url da imagem</label>
-                    <input type={'url'} placeholder="https://www.imagem.com.br" name="imageUrl" value={form.imageUrl} onChange={onChange}/>
-                    <p>{invalidUrlMessage}</p>
-                </div>
+                    <div>
+                        <label htmlFor="imageUrl">Url da imagem</label>
+                        <input type={'url'} placeholder="https://www.imagem.com.br" name="imageUrl" value={form.imageUrl} onChange={onChange}/>
+                        <p>{invalidUrlMessage}</p>
+                    </div>
 
-                <p>{message}</p>
+                    <p>{message}</p>
 
-                <button onClick={handleRegitration}>{isLoading? <Loading bgcolor={"white"}/> : "Cadastrar"}</button>
+                    <button onClick={handleRegitration}>{isLoading? <Loading bgcolor={"white"}/> : "Cadastrar"}</button>
+                </form>
             </FormContainer>
-
-            <Footer/>
         </>
     )
 }

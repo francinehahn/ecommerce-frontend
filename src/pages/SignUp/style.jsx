@@ -6,89 +6,45 @@ export const Container = styled.section `
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 2vh;
-        margin-top: 12vh;
+        gap: .7rem;
+        margin-top: 5rem;
 
         div {
             display: flex;
             flex-direction: column;
+            gap: .3rem;
 
             p {
-                font-size: 14px;
+                font-size: .875rem;
                 color: red;
-                @media screen and (max-width: 600px) {
-                    width: 80vw;
+                width: 25rem;
+
+                @media screen and (max-width: 800px) {
+                    width: 20rem;
                 }
             }
         }
 
         button {
-            font-size: 16px;
+            font-size: 1rem;
             border: none;
-            border-radius: 5px;
+            border-radius: 3px;
             background-color: rgb(39, 0, 130);
             color: white;
-            margin-top: 2vh;
-            @media screen and (min-width: 1200px) {
-                padding: 1.4vh 1.2vw;
-            }
-            @media screen and (min-width: 900px) and (max-width: 1200px) {
-                padding: 1.4vh 1.5vw;
-            }
-            @media screen and (min-width: 700px) and (max-width: 900px) {
-                padding: 1.4vh 2vw;
-            }
-            @media screen and (max-width: 700px) {
-                padding: 1.4vh 2.5vw;
-            }
-        }
-        span {
-            color: green;
-            margin-top: 1vh;
-        }
-    }
-`
+            width: 25rem;
+            padding: .7rem 0;
 
-export const PasswordInput = styled.span `
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    border: 1px solid grey;
-    border-radius: 2px;
-    @media screen and (min-width: 1200px) {
-        width: 30vw;
-    }
-    @media screen and (min-width: 1000px) and (max-width: 1200px) {
-        width: 35vw;
-    }
-    @media screen and (min-width: 800px) and (max-width: 1000px) {
-        width: 45vw;
-    }
-    @media screen and (min-width: 600px) and (max-width: 800px) {
-        width: 60vw;
-    }
-    @media screen and (max-width: 600px) {
-        width: 80vw;
-    }
-    input {
-        border: none;
-    }
-    svg {
-        color: #515151;
-        height: 20px;
-        width: 20px;
-        @media screen and (min-width: 1100px) {
-            margin: .5vh .5vw;
+            @media screen and (max-width: 800px) {
+                width: 20rem;
+            }
         }
-        @media screen and (min-width: 500px) and (max-width: 1100px) {
-            margin: .5vh 1vw;
+
+        #successMessage {
+            color: green;
         }
-        @media screen and (max-width: 500px) {
-            margin: .5vh 1.5vw;
-        }
-        :hover {
-            opacity: .7;
-            cursor: pointer;
+
+        #axiosError {
+            color: red;
         }
     }
 `
