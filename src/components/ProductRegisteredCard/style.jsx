@@ -4,10 +4,12 @@ import styled from "styled-components"
 export const Product = styled.div `
     display: grid;
     grid-template-columns: 35% 55% 10%;
+    gap: 1rem;
     border: 1px solid grey;
     border-radius: 3px;
-    min-width: 17.5rem;
-    max-width: 25rem;
+    min-width: 22rem;
+    min-height: 7rem;
+    padding-right: 2rem;
 
     img {
         border-radius: 3px 0 0 3px;
@@ -19,15 +21,15 @@ export const Product = styled.div `
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding: 0 1vw;
 
         h4 {
             font-size: 1rem;
-            line-height: 2rem;
+            line-height: 1.3rem;
         }
 
         p {
             font-size: .9rem;
+            line-height: 2rem;
             text-align: left;
         }
     }

@@ -8,7 +8,7 @@ export const Container = styled.div `
     border: 1px solid gray;
     border-radius: 3px;
     padding: .5rem;
-    min-width: 18.75rem;
+    min-width: 19rem;
 
     p {
         font-size: 1rem;
