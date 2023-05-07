@@ -17,10 +17,6 @@ export const Container = styled.section `
             p {
                 font-size: .875rem;
                 color: red;
-
-                @media screen and (max-width: 600px) {
-                    width: 80vw;
-                }
             }
         }
 

@@ -1,56 +1,55 @@
 import styled from "styled-components"
 
 
-export const FormContainer = styled.form `
-    height: 79vh;
+export const FormContainer = styled.section `
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 2vh;
-    padding: 0 5vw;
+    gap: 2rem;
+    margin-top: 4rem;
 
     h3 {
-        margin-bottom: 5vh;
+        font-size: 1.75rem;
         text-align: center;
-        @media screen and (min-width: 800px) {
-            font-size: 28px;
-        }
+        
         @media screen and (max-width: 800px) {
-            font-size: 24px;
+            font-size: 1.5rem;
         }
     }
-    div {
+
+    form {
         display: flex;
         flex-direction: column;
-        gap: .5vh;
+        gap: .4rem;
 
-        p {
-            font-size: 14px;
-            color: red;
-            @media screen and (max-width: 600px) {
-                width: 80vw;
+        div {
+            display: flex;
+            flex-direction: column;
+            gap: .2rem;
+
+            p {
+                font-size: .875rem;
+                color: red;
             }
         }
-    }
 
-    button {
-        border: none;
-        border-radius: 5px;
-        background-color: rgb(39, 0, 130);
-        color: white;
-        font-size: 16px;
-        margin-top: 1vh;
-        
-        @media screen and (min-width: 1000px) {
-            padding: 1.4vh 1vw;   
+        p {
+            color: green;
         }
-        @media screen and (max-width: 1000px) {
-            padding: 1.4vh 1.8vw;   
+
+        button {
+            border: none;
+            border-radius: 3px;
+            background-color: rgb(39, 0, 130);
+            color: white;
+            font-size: 1rem;
+            padding: .7rem 0;
+            width: 25rem;
+
+            @media screen and (max-width: 800px) {
+                width: 20rem;
+            }
         }
-    }
-    
-    p {
-        color: green;
     }
 `
