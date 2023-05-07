@@ -7,7 +7,7 @@ export const Container = styled.div `
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin: 3rem 0 1rem 0;
+        margin: 3rem 0;
         height: 55vh;
         overflow-y: auto;
 
@@ -74,7 +74,7 @@ export const Container = styled.div `
         bottom: 14vh;
         right: 0;
         left: 0;
-        margin: 0 auto;
+        margin: 1rem auto 0 auto;
 
         @media screen and (max-width: 380px) {
             bottom: 18vh;
