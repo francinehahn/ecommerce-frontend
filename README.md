@@ -52,9 +52,9 @@ https://ecommerce-frontend-eight.vercel.app/
 <br>
 <img src="./src/img/print3-mobile.jpg" width="40%"/>
 <br>
-<img src="./src/img/print4-mobile.jpg" width="40%"/>
+<img src="./src/img/print4-mobile.jpeg" width="40%"/>
 <br>
-<img src="./src/img/print5-mobile.jpg" width="40%"/>
+<img src="./src/img/print5-mobile.jpeg" width="40%"/>
 <br>
 <img src="./src/img/print6-mobile.jpg" width="40%"/>
 <br>
