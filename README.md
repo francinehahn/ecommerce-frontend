@@ -46,16 +46,16 @@ https://ecommerce-frontend-eight.vercel.app/
 <br>
 
 ### Mobile version
-<img src="./src/img/print1-mobile.jpeg" width="40%"/>
+<img src="./src/img/print1-mobile.jpeg" width="35%"/>
 <br>
-<img src="./src/img/print2-mobile.jpg" width="40%"/>
+<img src="./src/img/print2-mobile.jpg" width="35%"/>
 <br>
-<img src="./src/img/print3-mobile.jpg" width="40%"/>
+<img src="./src/img/print3-mobile.jpg" width="35%"/>
 <br>
-<img src="./src/img/print4-mobile.jpeg" width="40%"/>
+<img src="./src/img/print4-mobile.jpeg" width="35%"/>
 <br>
-<img src="./src/img/print5-mobile.jpeg" width="40%"/>
+<img src="./src/img/print5-mobile.jpeg" width="35%"/>
 <br>
-<img src="./src/img/print6-mobile.jpg" width="40%"/>
+<img src="./src/img/print6-mobile.jpg" width="35%"/>
 <br>
-<img src="./src/img/print7-mobile.jpg" width="40%"/>
+<img src="./src/img/print7-mobile.jpeg" width="35%"/>
