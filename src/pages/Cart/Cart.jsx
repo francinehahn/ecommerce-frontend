@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react"
 import { Footer } from "../../components/Footer/Footer"
 import { Header } from "../../components/Header/Header"
 import { ProductInCart } from "../../components/ProductInCart/ProductInCart"
-import {Container, Button} from './style'
+import {Container} from './style'
 import {CgSmileSad} from "react-icons/cg"
 import { useNavigate } from "react-router-dom"
 import axios from "axios"
@@ -50,7 +50,6 @@ export function Cart() {
                 setReload(!reload)
                 Swal.fire("Pagamento realizado com sucesso!")
             }).catch(error => {
-                console.log(error)
                 Swal.fire(error.response.data)
                 setIsLoading(false)
             })
@@ -76,21 +75,26 @@ export function Cart() {
     return (
         <>
             <Header reload={reload}/>
-            <Container>
-                {renderData}
 
-                {(!productsInCart || productsInCart.length === 0) && (
+            <Container>
+                {renderData.length > 0 &&
+                    <section>
+                        {renderData}
+                        <p id={"totalPrice"}>Valor total: R${totalPrice.toFixed(2).toString().replace(".", ",")}</p>
+                    </section>
+                }
+
+                {renderData.length === 0 && (
                     <span>
                         <p>Carrinho vazio</p>
                         <CgSmileSad/>
                     </span>
                 )}
-                {totalPrice > 0 && <p id={"totalPrice"}>Valor total: R${totalPrice.toFixed(2).toString().replace(".", ",")}</p>}
+
+                {renderData.length > 0 && <button id="finishOrder" onClick={handlePayment}>{isLoading? <Loading bgcolor={"white"}/> : "Finalizar a compra"}</button>}
+                
+                <Footer/>
             </Container>
-
-            {productsInCart.length > 0 && <Button onClick={handlePayment}>{isLoading? <Loading bgcolor={"white"}/> : "Finalizar a compra"}</Button>}
-
-            <Footer/>
         </>
     )
 }

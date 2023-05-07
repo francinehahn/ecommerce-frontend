@@ -6,19 +6,12 @@ export const Container = styled.div `
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    padding: .5rem 2rem;
+
+    padding: .5rem 0;
+    margin-bottom: 1rem;
     border-bottom: 1px solid grey;
-    margin: 0 5rem 2rem 5rem;
     gap: 2rem;
-    
-    @media screen and (max-width: 750px) {
-        gap: 1rem;
-        margin: 0 2rem 2rem 2rem;
-    }
-    @media screen and (max-width: 450px) {
-        gap: 1rem;
-        margin: 0 1rem 2rem 1rem;
-    }
+    width: 90vw;
 
     img {
         border-radius: 1px;

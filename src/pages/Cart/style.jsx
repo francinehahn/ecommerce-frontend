@@ -1,22 +1,47 @@
 import styled from "styled-components"
 
-export const Container = styled.section `
-    margin-top: 6vh;
+export const Container = styled.div `
+    overflow-y: none;
 
-    @media screen and (min-width: 1000px) {
-        min-height: 59vh;
-    }
-    @media screen and (min-width: 770px) and (max-width: 1000px) {
-        min-height: 65vh;
-    }
-    @media screen and (min-width: 600px) and (max-width: 770px) {
-        min-height: 62vh;
-    }
-    @media screen and (min-width: 500px) and (max-width: 600px) {
-        min-height: 58vh;
-    }
-    @media screen and (max-width: 500px) {
-        min-height: 60vh;
+    section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 3rem;
+        height: 55vh;
+        overflow-y: auto;
+
+        ::-webkit-scrollbar {
+            width: 12px;
+            background-color: #ffffff;
+        }
+        ::-webkit-scrollbar-track {
+            background: #d7d7d7;
+            border-radius: 20px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: #acacac;
+            border-radius: 20px;
+        }
+
+        @media screen and (max-width: 800px) {
+            height: 60vh;
+        }
+
+        @media screen and (max-width: 380px) {
+            height: 48vh;
+        }
+
+        p {
+            text-align: center;
+        }
+
+        #totalPrice {
+            color: red;
+            font-size: 1.125rem;
+            font-weight: 500;
+            margin-top: 1rem;
+        }
     }
 
     span {
@@ -24,57 +49,46 @@ export const Container = styled.section `
         align-items: center;
         justify-content: center;
         flex-wrap: wrap;
-        gap: .8vw;
-
-        @media screen and (min-width: 1300px) {
-            padding: 32vh 0 35vh 0;
-        }
-        @media screen and (min-width: 1100px) and (max-width: 1300px) {
-            padding: 32vh 0 37vh 0;
-        }
-        @media screen and (min-width: 900px) and (max-width: 1100px) {
-            padding: 32vh 0 34vh 0;
-        }
-        @media screen and (min-width: 770px) and (max-width: 900px) {
-            padding: 35vh 0 40vh 0;
-        }
-        @media screen and (min-width: 600px) and (max-width: 770px) {
-            padding: 33vh 0 38vh 0;
-        }
-        @media screen and (min-width: 500px) and (max-width: 600px) {
-            padding: 33vh 0;
-        }
-        @media screen and (max-width: 500px) {
-            padding: 35vh 0;
-        }
-
+        gap: 1rem;
+        height: 70vh;
+        
         p {
-            font-size: 20px;
+            font-size: 1.25rem;
         }
 
         svg {
-            height: 40px;
-            width: 40px;
+            height: 2.5rem;
+            width: 2.5rem;
         }
     }
 
-    p {
-        text-align: center;
+    #finishOrder {
+        background-color: rgb(39, 0, 130);
+        font-size: 1rem;
+        color: white;
+        padding: .8rem 0;
+        border-radius: 3px;
+        width: 13rem;
+
+        position: absolute;
+        bottom: 14vh;
+        right: 0;
+        left: 0;
+        margin: 0 auto;
+
+        @media screen and (max-width: 380px) {
+            bottom: 18vh;
+        }
+
+        @media screen and (max-width: 300px) {
+            bottom: 24vh;
+        }
     }
 
-    #totalPrice {
-        color: red;
-        font-size: 18px;
-        font-weight: 500;
+    footer {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        left: 0;
     }
-`
-
-export const Button = styled.button `
-    display: block;
-    margin: 5vh auto 4vh auto;
-    background-color: rgb(39, 0, 130);
-    font-size: 16px;
-    color: white;
-    padding: 1.5vh;
-    border-radius: 0px;
 `
