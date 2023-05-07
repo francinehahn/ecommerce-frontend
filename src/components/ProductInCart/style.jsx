@@ -13,6 +13,11 @@ export const Container = styled.div `
     gap: 2rem;
     width: 90vw;
 
+    @media screen and (max-width: 850px) {
+        gap: 1rem;
+        padding: .5rem 1rem;
+    }
+
     img {
         border-radius: 1px;
         width: 5rem;

@@ -90,6 +90,10 @@ export const Purchases = styled.section `
             border-radius: 20px;
         }
     }
+
+    p {
+        text-align: center;
+    }
 `
 
 export const ProductsRegistered = styled.section `
@@ -109,6 +113,10 @@ export const ProductsRegistered = styled.section `
                 cursor: pointer;
             }
         }
+    }
+
+    p {
+        text-align: center;
     }
 
     #productsRegistered {

@@ -23,14 +23,6 @@ export const GlobalStyle = createGlobalStyle`
             border-radius: 20px;
         }
 
-        form {
-            width: 25rem;
-            
-            @media screen and (max-width: 800px) {
-                width: 20rem;
-            }
-        }
-
         input {
             width: 25rem;
             font-size: 1rem;

@@ -31,6 +31,11 @@ export const FormContainer = styled.section `
             p {
                 font-size: .875rem;
                 color: red;
+                width: 25rem;
+
+                @media screen and (max-width: 800px) {
+                    width: 20rem;
+                }
             }
         }
 
