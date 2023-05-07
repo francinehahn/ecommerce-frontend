@@ -13,32 +13,20 @@ export const FormContainer = styled.form `
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 2vh;
+    gap: 1rem;
+
     div {
         display: flex;
         flex-direction: column;
-        align-items: center;
-        gap: 1.5vh;
+        align-items: flex-start;
+        gap: .3rem;
+
         input {
             border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            padding: 1vh 0 1vh .5vw;
-            @media screen and (min-width: 1200px) {
-                width: 35vw;
-            }
-            @media screen and (min-width: 1000px) and (max-width: 1200px) {
-                width: 40vw;
-            }
-            @media screen and (min-width: 800px) and (max-width: 1000px) {
-                width: 60vw;
-            }
-            @media screen and (min-width: 600px) and (max-width: 800px) {
-                width: 70vw;
-            }
-            @media screen and (min-width: 200px) and (max-width: 600px) {
-                width: 80vw;
-            }
+            border-radius: 3px;
+            font-size: 1rem;
+            padding: .5rem;
+            
             :focus {
                 outline: none;
             }
@@ -46,33 +34,24 @@ export const FormContainer = styled.form `
     }
 
     p {
-        font-size: 16px;
+        font-size: 1rem;
         color: green;
         text-align: center;
     }
+
     span {
         display: flex;
-        gap: 1vw;
-        margin-top: 2vh;
+        gap: 2rem;
+        margin-top: -.5rem;
+
         button {
             border: none;
-            border-radius: 5px;
+            border-radius: 3px;
             background-color: rgb(39, 0, 130);
             color: white;
-            font-size: 16px;
-            margin-top: 2vh;
-            @media screen and (min-width: 1000px) {
-                padding: 1.4vh 1.2vw;
-            }
-            @media screen and (min-width: 800px) and (max-width: 1000px) {
-                padding: 1.4vh 2.5vw;
-            }
-            @media screen and (min-width: 600px) and (max-width: 800px) {
-                padding: 1.4vh 3vw;
-            }
-            @media screen and (max-width: 600px) {
-                padding: 1.4vh 3.5vw;
-            }
+            font-size: 1rem;
+            padding: .5rem 1rem;
+
             :hover {
                 opacity: .8;
                 cursor: pointer;
