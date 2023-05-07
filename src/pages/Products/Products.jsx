@@ -71,7 +71,7 @@ export function Products() {
             <Header reload={reload}/>
             
             <Container>
-                <form>
+                <span>
                     <input placeholder='Pesquisar por...' value={searchedProduct} onChange={e => setSearchedProduct(e.target.value)}/>
                     
                     <div>
@@ -81,15 +81,14 @@ export function Products() {
                             <option value="desc">Z - A</option>
                         </select>
                     </div>
-                </form>
+                </span>
 
                 {!searchedProduct && <img id="banner_desktop" src={banner_desktop} alt="Imagem promocional do dia do consumidor"/>}
                 {!searchedProduct && <img id="banner_mobile" src={banner_mobile} alt="Imagem promocional do dia do consumidor"/>}
 
-                {isLoading && <Loading bgcolor={"purple"}/>}
-                {!isLoading && !data && error && <p>{error}</p>}
-
                 <section>
+                    {isLoading && <Loading bgcolor={"purple"}/>}
+                    {!isLoading && !data && error && <p>{error}</p>}
                     {!isLoading && data && renderData}
                 </section>
 
