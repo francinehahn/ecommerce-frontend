@@ -3,7 +3,7 @@ import { Footer } from "../../components/Footer/Footer"
 import { Header } from "../../components/Header/Header"
 import { useProtectedPage } from "../../hooks/useProtectedPage"
 import { useRequestData } from "../../hooks/useRequestData"
-import { Container, PersonalInfo, PurchasesAndSales } from "./Style"
+import { Container, PersonalInfo, Purchases, ProductsRegistered, Sales } from "./Style"
 import {Loading} from '../../components/Loading/Loading'
 import { PurchaseCard } from "../../components/PurchaseCard/PurchaseCard"
 import {ProductRegisteredCard} from '../../components/ProductRegisteredCard/ProductRegisteredCard'
@@ -73,15 +73,9 @@ export function MyAccount () {
                         <h2>Editar as minhas informações</h2>
                         <BsFillPencilFill onClick={() => setShowUserForm(true)}/>
                     </span>
-
-                    {showUserForm && <UserInfoForm showForm={showUserForm} setShowForm={setShowUserForm} name={user.name} email={user.email}/>}
-
-                    {!showUserForm && isLoadingUser && <Loading bgcolor={"purple"}/>}
-
-                    {!showUserForm && !isLoadingUser && !user && errorUser && <p>{errorUser}</p>}
-
+                    
                     {!showUserForm && !isLoadingUser && user && (
-                        <>
+                        <div>
                             <div>
                                 <p><strong>Nome:</strong></p>
                                 <p>{user.name}</p>
@@ -96,21 +90,29 @@ export function MyAccount () {
                                 <p><strong>Senha:</strong></p>
                                 <p>*************</p>
                             </div>
-                        </>
+                        </div>
                     )}
+
+
+                    {showUserForm && <UserInfoForm showForm={showUserForm} setShowForm={setShowUserForm} name={user.name} email={user.email}/>}
+
+                    {!showUserForm && isLoadingUser && <Loading bgcolor={"purple"}/>}
+
+                    {!showUserForm && !isLoadingUser && !user && errorUser && <p>{errorUser}</p>}
                 </PersonalInfo>
 
-                <PurchasesAndSales>
+                <Purchases>
                     <h3>Minhas compras</h3>
                     {isLoadingPurchases && <Loading bgcolor={"purple"}/>}
                     {!isLoadingPurchases && !purchases && errorPurchases && <p>Você não realizou nenhuma compra ainda.</p>}
                     {!isLoadingPurchases && purchases && (
-                        <section>
+                        <div id="purchases">
                             {renderPurchases}
-                        </section>
+                        </div>
                     )}
-
-                    
+                </Purchases>
+                
+                <ProductsRegistered>
                     <span>
                         <h3>Produtos cadastrados</h3>
                         <BsPlusCircle onClick={() => navigate("/cadastrar-produto")}/>
@@ -119,9 +121,9 @@ export function MyAccount () {
                     {!showProductForm && isLoadingProducts && <Loading bgcolor={"purple"}/>}
                     {!showProductForm && !isLoadingProducts && !productsRegistered && errorProducts && <p>Você não cadastrou nenhum produto.</p>}
                     {!showProductForm && !isLoadingProducts && productsRegistered && (
-                        <section>
+                        <div id="productsRegistered">
                             {renderProductsRegistered}
-                        </section>
+                        </div>
                     )}
 
                     {showProductForm && <ProductInfoForm
@@ -132,16 +134,18 @@ export function MyAccount () {
                         price={productToBeEdited.price}
                         imageUrl={productToBeEdited.imageUrl}
                     />}
-
+                </ProductsRegistered>
+                
+                <Sales>
                     <h3>Minhas vendas</h3>
                     {isLoadingSales && <Loading bgcolor={"purple"}/>}
                     {!isLoadingSales && !sales && errorSales && <p>Você não realizou nenhuma venda ainda.</p>}
                     {!isLoadingSales && sales && (
-                        <section>
+                        <div id="sales">
                             {renderSales}
-                        </section>
+                        </div>
                     )}
-                </PurchasesAndSales>
+                </Sales>
             </Container>
 
             <Footer/>

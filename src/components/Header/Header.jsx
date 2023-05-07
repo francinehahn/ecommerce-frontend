@@ -3,11 +3,20 @@ import {HeaderSection, NavDesktop, MobileSymbol, NavMobile} from './style'
 import logo from '../../img/logo_LabEcommerce.png'
 import { Link } from 'react-router-dom'
 import {AiOutlineShoppingCart} from 'react-icons/ai'
+import { useRequestData } from '../../hooks/useRequestData'
+import { base_url } from '../../constants/constants'
 
 export function Header(props) {
-    const [showMobileMenu, setShowMobileMenu] = useState(false)
     let productsInCart = JSON.parse(localStorage.getItem("products")) !== null && JSON.parse(localStorage.getItem("products")).length
     const token = localStorage.getItem("token")
+    
+    const [showMobileMenu, setShowMobileMenu] = useState(false)
+    const [userData, isLoadingUserData, userError] = useRequestData(`${base_url}users/profile`, token)
+
+    if (!isLoadingUserData && !userData && userError) {
+        localStorage.removeItem("token")
+    }
+    
 
     useEffect(() => {
         productsInCart = JSON.parse(localStorage.getItem("products")) !== null && JSON.parse(localStorage.getItem("products")).length
@@ -22,15 +31,15 @@ export function Header(props) {
         return (
             <>
                 <Link to="/">Home</Link>
-                {token !== null && <Link to="/minha-conta">Minha Conta</Link>}
+                {userData && <Link to="/minha-conta">Minha Conta</Link>}
                 <span>
                     <Link to="/carrinho">Carrinho</Link>
                     <AiOutlineShoppingCart/>
                     {JSON.parse(localStorage.getItem("products")) !== null && JSON.parse(localStorage.getItem("products")).length > 0 &&
                     <p>{productsInCart}</p>}
                 </span>
-                {token !== null && <Link to="/" onClick={handleLogout}>Logout</Link>}
-                {token === null && <Link to="/login">Login</Link>}
+                {userData && <Link to="/" onClick={handleLogout}>Logout</Link>}
+                {!userData && <Link to="/login">Login</Link>}
             </>
         )
     }

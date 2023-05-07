@@ -8,6 +8,7 @@ export const HeaderSection = styled.header `
     align-items: center;
     position: sticky;
     top: 0;
+    z-index: 10000;
 
     img {
         width: 12rem;
