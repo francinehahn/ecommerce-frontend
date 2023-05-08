@@ -23,7 +23,6 @@ export function Cart() {
         productsInCart = JSON.parse(localStorage.getItem("products"))
     }, [reload])
 
-
     const handlePayment = () => {
         if (!productsInCart || productsInCart.length === 0) {
             return
@@ -84,7 +83,7 @@ export function Cart() {
                     </section>
                 }
 
-                {renderData.length === 0 && (
+                {(renderData.length === 0 || productsInCart === null) && (
                     <span>
                         <p>Carrinho vazio</p>
                         <CgSmileSad/>
