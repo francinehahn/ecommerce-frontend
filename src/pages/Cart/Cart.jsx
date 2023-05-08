@@ -83,7 +83,7 @@ export function Cart() {
                     </section>
                 }
 
-                {(renderData.length === 0 || productsInCart === null) && (
+                {(renderData.length === 0 || !productsInCart) && (
                     <span>
                         <p>Carrinho vazio</p>
                         <CgSmileSad/>
