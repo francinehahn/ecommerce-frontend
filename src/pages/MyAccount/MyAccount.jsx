@@ -18,11 +18,12 @@ export function MyAccount () {
     useProtectedPage()
 
     const token = localStorage.getItem("token")
+    const [reload, setReload] = useState(false)
     
     const [showUserForm, setShowUserForm] = useState(false)
     const [showProductForm, setShowProductForm] = useState(false)
 
-    const [user, isLoadingUser, errorUser] = useRequestData(`${base_url}users/profile`, token)
+    const [user, isLoadingUser, errorUser] = useRequestData(`${base_url}users/profile`, token, reload)
     const [purchases, isLoadingPurchases, errorPurchases] = useRequestData(`${base_url}users/purchases`, token)
     const [sales, isLoadingSales, errorSales] = useRequestData(`${base_url}users/sales`, token)
     const [productsRegistered, isLoadingProducts, errorProducts] = useRequestData(`${base_url}products/user`, token)
@@ -94,10 +95,18 @@ export function MyAccount () {
                     )}
 
 
-                    {showUserForm && <UserInfoForm showForm={showUserForm} setShowForm={setShowUserForm} name={user.name} email={user.email}/>}
+                    {showUserForm && 
+                        <UserInfoForm
+                            showForm={showUserForm}
+                            setShowForm={setShowUserForm}
+                            name={user.name}
+                            email={user.email}
+                            reload={reload}
+                            setReload={setReload}
+                        />
+                    }
 
                     {!showUserForm && isLoadingUser && <Loading bgcolor={"purple"}/>}
-
                     {!showUserForm && !isLoadingUser && !user && errorUser && <p>{errorUser}</p>}
                 </PersonalInfo>
 
@@ -133,6 +142,8 @@ export function MyAccount () {
                         name={productToBeEdited.name}
                         price={productToBeEdited.price}
                         imageUrl={productToBeEdited.imageUrl}
+                        reload={reload}
+                        setReload={setReload}
                     />}
                 </ProductsRegistered>
                 

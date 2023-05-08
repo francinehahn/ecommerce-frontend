@@ -17,7 +17,6 @@ export function Header(props) {
         localStorage.removeItem("token")
     }
     
-
     useEffect(() => {
         productsInCart = JSON.parse(localStorage.getItem("products")) !== null && JSON.parse(localStorage.getItem("products")).length
     }, [props.reload])

@@ -24,6 +24,7 @@ export function ProductInfoForm (props) {
             }
         }).then(() => {
             setIsLoading(false)
+            props.setReload(!props.reload)
             setMessage("Informações editadas com sucesso!")
         })
         .catch(error => {

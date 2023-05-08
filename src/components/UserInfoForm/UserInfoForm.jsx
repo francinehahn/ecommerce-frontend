@@ -25,6 +25,7 @@ export function UserInfoForm (props) {
             }
         }).then(() => {
             setMessage("Informações editadas com sucesso!")
+            props.setReload(!props.reload)
             setIsLoading(false)
         }).catch(error => {
             setIsLoading(false)
