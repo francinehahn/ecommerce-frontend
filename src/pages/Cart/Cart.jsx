@@ -1,14 +1,17 @@
 import React, { useEffect, useState } from "react"
+import { useNavigate } from "react-router-dom"
+
+import axios from "axios"
+import Swal from "sweetalert2"
+import {CgSmileSad} from "react-icons/cg"
+
 import { Footer } from "../../components/Footer/Footer"
 import { Header } from "../../components/Header/Header"
 import { ProductInCart } from "../../components/ProductInCart/ProductInCart"
-import {Container} from './style'
-import {CgSmileSad} from "react-icons/cg"
-import { useNavigate } from "react-router-dom"
-import axios from "axios"
 import { Loading } from "../../components/Loading/Loading"
 import { base_url } from "../../constants/constants"
-import Swal from "sweetalert2"
+
+import {Button, Container, EmptyCart, TotalPrice} from './style'
 
 
 export function Cart() {
@@ -79,18 +82,18 @@ export function Cart() {
                 {renderData.length > 0 &&
                     <section>
                         {renderData}
-                        <p id={"totalPrice"}>Valor total: R${totalPrice.toFixed(2).toString().replace(".", ",")}</p>
+                        <TotalPrice>Valor total: R${totalPrice.toFixed(2).toString().replace(".", ",")}</TotalPrice>
                     </section>
                 }
 
                 {(renderData.length === 0 || !productsInCart) && (
-                    <span>
+                    <EmptyCart>
                         <p>Carrinho vazio</p>
                         <CgSmileSad/>
-                    </span>
+                    </EmptyCart>
                 )}
 
-                {renderData.length > 0 && <button id="finishOrder" onClick={handlePayment}>{isLoading? <Loading bgcolor={"white"}/> : "Finalizar a compra"}</button>}
+                {renderData.length > 0 && <Button onClick={handlePayment}>{isLoading? <Loading bgcolor={"white"}/> : "Finalizar a compra"}</Button>}
                 
                 <Footer/>
             </Container>

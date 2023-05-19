@@ -1,5 +1,5 @@
 import React from 'react'
-import {Container, Units} from './style'
+import {Container, Price, ProductInfo, Units} from './style'
 import { BsTrash } from 'react-icons/bs'
 
 
@@ -37,16 +37,20 @@ export function ProductInCart(props) {
         <Container> 
             <img src={props.img} alt={props.name}/>
             
-            <Units>
-                <button onClick={handleReduceUnit}>-</button>
-                <p>{props.units}x</p>
-                <button onClick={handleIncreaseUnit}>+</button>
-            </Units>
-            
-            <p>{props.name}</p>
-            <p>R${(props.price * props.units).toFixed(2).replace(".", ",")}</p>
+            <ProductInfo>
+                <p>{props.name}</p>
 
-            <BsTrash onClick={removeProduct}/>
+                <div>
+                    <Units>
+                        <button onClick={handleReduceUnit}>-</button>
+                        <p>{props.units}x</p>
+                        <button onClick={handleIncreaseUnit}>+</button>
+                    </Units>
+                    <BsTrash onClick={removeProduct}/>
+                </div>
+            </ProductInfo>
+
+            <Price>R${(props.price * props.units).toFixed(2).replace(".", ",")}</Price>
         </Container>
     )
 }
