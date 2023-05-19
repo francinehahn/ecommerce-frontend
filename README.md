@@ -50,7 +50,7 @@ https://ecommerce-frontend-eight.vercel.app/
 <br>
 <img src="./src/img/print2-mobile.jpg" width="35%"/>
 <br>
-<img src="./src/img/print3-mobile.jpg" width="35%"/>
+<img src="./src/img/print3-mobile.jpeg" width="35%"/>
 <br>
 <img src="./src/img/print4-mobile.jpeg" width="35%"/>
 <br>
