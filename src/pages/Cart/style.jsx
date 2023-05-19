@@ -14,6 +14,10 @@ export const Container = styled.div `
         ::-webkit-scrollbar {
             width: 12px;
             background-color: #ffffff;
+
+            @media screen and (max-width: 800px) {
+                width: 8px;
+            }
         }
         ::-webkit-scrollbar-track {
             background: #d7d7d7;
