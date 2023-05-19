@@ -1,5 +1,5 @@
 import styled from "styled-components"
-
+//dwsvh1g8zj
 export const Container = styled.div `
     min-height: 73vh;
     margin: 3.5rem 5rem;
@@ -69,34 +69,14 @@ export const PersonalInfo = styled.section `
     }
 `
 
-export const Purchases = styled.section `
-    #purchases {
-        display: flex;
-        gap: 1rem;
-        padding-bottom: 1rem;
-        overflow-x: auto;
-
-        ::-webkit-scrollbar {
-            height: 12px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: #eeeeee;
-            width: 8px;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background-color: #cdcdcd;
-            border-radius: 20px;
-        }
-    }
-
+export const PurchasesSection = styled.section `
     p {
         text-align: center;
+        line-height: 1.7rem;
     }
 `
 
-export const ProductsRegistered = styled.section `
+export const ProductsRegisteredSection = styled.section `
     span {
         display: flex;
         justify-content: center;
@@ -118,52 +98,48 @@ export const ProductsRegistered = styled.section `
     p {
         text-align: center;
     }
+`
 
-    #productsRegistered {
-        display: flex;
-        gap: 1rem;
-        padding-bottom: 1rem;
-        overflow-x: auto;
+export const SalesSection = styled.section `
+    p {
+        text-align: center;
+    }
+`
 
-        ::-webkit-scrollbar {
-            height: 12px;
+export const CarouselWrapper = styled.div `
+    display: flex;
+    gap: 1rem;
+
+    button {
+        @media screen and (max-width: 900px) {
+            display: none;
         }
 
-        ::-webkit-scrollbar-track {
-            background: #eeeeee;
-            width: 8px;
-        }
+        @media screen and (min-width: 900px) {
+            border-radius: 5px;
+            padding: .5rem;
+            background: linear-gradient(90deg, #e5e4e4, #e8e8e8);
+            opacity: .3;
 
-        ::-webkit-scrollbar-thumb {
-            background-color: #cdcdcd;
-            border-radius: 20px;
+            :hover {
+                opacity: .7;
+            }
+
+            svg {
+                height: 2rem;
+                width: 2rem;
+                color: #989797;
+            }
         }
     }
 `
 
-export const Sales = styled.section `
-    p {
-        text-align: center;
-    }
-
-    #sales {
-        display: flex;
-        gap: 1rem;
-        padding-bottom: 1rem;
-        overflow-x: auto;
-
-        ::-webkit-scrollbar {
-            height: 12px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: #eeeeee;
-            width: 8px;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background-color: #cdcdcd;
-            border-radius: 20px;
-        }
+export const Carousel = styled.div `
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    ::-webkit-scrollbar {
+        display: none;
     }
 `
