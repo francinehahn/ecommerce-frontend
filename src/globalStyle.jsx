@@ -15,11 +15,11 @@ export const GlobalStyle = createGlobalStyle`
             background-color: #ffffff;
         }
         ::-webkit-scrollbar-track {
-            background: #d7d7d7;
+            background: #e5e4e4;
             border-radius: 20px;
         }
         ::-webkit-scrollbar-thumb {
-            background-color: #acacac;
+            background-color: #c0c0c0;
             border-radius: 20px;
         }
 
