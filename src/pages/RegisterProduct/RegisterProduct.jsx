@@ -1,13 +1,16 @@
-import axios from "axios"
 import React, { useState } from "react"
-import { Footer } from "../../components/Footer/Footer"
+
+import axios from "axios"
+import Swal from "sweetalert2"
+
 import { Header } from "../../components/Header/Header"
 import { Loading } from "../../components/Loading/Loading"
 import { base_url, validateImageUrl, validateProductName } from "../../constants/constants"
+
 import { useForm } from "../../hooks/useForm"
 import { useProtectedPage } from "../../hooks/useProtectedPage"
+
 import { FormContainer } from "./style"
-import Swal from "sweetalert2"
 
 
 export function RegisterProduct () {
