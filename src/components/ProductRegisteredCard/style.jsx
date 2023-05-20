@@ -5,7 +5,7 @@ export const Product = styled.div `
     display: grid;
     grid-template-columns: 35% 55% 10%;
     gap: 1rem;
-    border: 1px solid grey;
+    border: 1px solid lightgrey;
     border-radius: 3px;
     min-width: 22rem;
     min-height: 7rem;

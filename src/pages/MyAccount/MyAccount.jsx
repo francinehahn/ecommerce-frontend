@@ -1,17 +1,22 @@
-import React, {useState} from "react"
-import { Footer } from "../../components/Footer/Footer"
-import { Header } from "../../components/Header/Header"
-import { useProtectedPage } from "../../hooks/useProtectedPage"
-import { useRequestData } from "../../hooks/useRequestData"
-import { Container, PersonalInfo, Purchases, ProductsRegistered, Sales } from "./Style"
-import {Loading} from '../../components/Loading/Loading'
-import { PurchaseCard } from "../../components/PurchaseCard/PurchaseCard"
+import React, {useState, useRef} from "react"
+import { useNavigate } from "react-router-dom"
+
+import {IoIosArrowDropleftCircle, IoIosArrowDroprightCircle} from "react-icons/io"
 import {ProductRegisteredCard} from '../../components/ProductRegisteredCard/ProductRegisteredCard'
 import {BsFillPencilFill, BsPlusCircle} from "react-icons/bs"
-import { UserInfoForm } from "../../components/UserInfoForm/UserInfoForm"
+
+import { Footer } from "../../components/Footer/Footer"
+import { Header } from "../../components/Header/Header"
 import { ProductInfoForm } from "../../components/ProductInfoForm/ProductInfoForm"
-import { useNavigate } from "react-router-dom"
+import {Loading} from '../../components/Loading/Loading'
+import { PurchaseCard } from "../../components/PurchaseCard/PurchaseCard"
+import { UserInfoForm } from "../../components/UserInfoForm/UserInfoForm"
+
+import { useProtectedPage } from "../../hooks/useProtectedPage"
+import { useRequestData } from "../../hooks/useRequestData"
 import { base_url } from "../../constants/constants"
+
+import { Container, PersonalInfo, PurchasesSection, ProductsRegisteredSection, SalesSection, CarouselWrapper, Carousel } from "./Style"
 
 
 export function MyAccount () {
@@ -29,7 +34,35 @@ export function MyAccount () {
     const [productsRegistered, isLoadingProducts, errorProducts] = useRequestData(`${base_url}products/user`, token)
     const [productToBeEdited, setProductToBeEdited] = useState({id: "", name: "", price: 0, imageUrl: ""})
 
+    const carouselPurchases = useRef(null)
+    const carouselSales = useRef(null)
+    const carouselProducts = useRef(null)
+
     const navigate = useNavigate()
+
+    const handleLeftClickPurchases = () => {
+        carouselPurchases.current.scrollLeft -= carouselPurchases.current.offsetWidth
+    }
+
+    const handleRightClickPurchases = () => {
+        carouselPurchases.current.scrollLeft += carouselPurchases.current.offsetWidth
+    }
+
+    const handleLeftClickSales = () => {
+        carouselSales.current.scrollLeft -= carouselSales.current.offsetWidth
+    }
+
+    const handleRightClickSales = () => {
+        carouselSales.current.scrollLeft += carouselSales.current.offsetWidth
+    }
+
+    const handleLeftClickProducts = () => {
+        carouselSunday.current.scrollLeft -= carouselSunday.current.offsetWidth
+    }
+
+    const handleRightClickProducts = () => {
+        carouselProducts.current.scrollLeft += carouselProducts.current.offsetWidth
+    }
     
     const renderPurchases = purchases && purchases.map((item, index) => {
         return <PurchaseCard
@@ -110,18 +143,20 @@ export function MyAccount () {
                     {!showUserForm && !isLoadingUser && !user && errorUser && <p>{errorUser}</p>}
                 </PersonalInfo>
 
-                <Purchases>
+                <PurchasesSection>
                     <h3>Minhas compras</h3>
                     {isLoadingPurchases && <Loading bgcolor={"purple"}/>}
                     {!isLoadingPurchases && !purchases && errorPurchases && <p>Você não realizou nenhuma compra ainda.</p>}
                     {!isLoadingPurchases && purchases && (
-                        <div id="purchases">
-                            {renderPurchases}
-                        </div>
+                        <CarouselWrapper>
+                            <button onClick={handleLeftClickPurchases}><IoIosArrowDropleftCircle/></button>
+                            <Carousel ref={carouselPurchases}>{renderPurchases}</Carousel>
+                            <button onClick={handleRightClickPurchases}><IoIosArrowDroprightCircle/></button>
+                        </CarouselWrapper>
                     )}
-                </Purchases>
+                </PurchasesSection>
                 
-                <ProductsRegistered>
+                <ProductsRegisteredSection>
                     <span>
                         <h3>Produtos cadastrados</h3>
                         <BsPlusCircle onClick={() => navigate("/cadastrar-produto")}/>
@@ -130,9 +165,11 @@ export function MyAccount () {
                     {!showProductForm && isLoadingProducts && <Loading bgcolor={"purple"}/>}
                     {!showProductForm && !isLoadingProducts && !productsRegistered && errorProducts && <p>Você não cadastrou nenhum produto.</p>}
                     {!showProductForm && !isLoadingProducts && productsRegistered && (
-                        <div id="productsRegistered">
-                            {renderProductsRegistered}
-                        </div>
+                        <CarouselWrapper>
+                            <button onClick={handleLeftClickProducts}><IoIosArrowDropleftCircle/></button>
+                            <Carousel ref={carouselProducts}>{renderProductsRegistered}</Carousel>
+                            <button onClick={handleRightClickProducts}><IoIosArrowDroprightCircle/></button>
+                        </CarouselWrapper>
                     )}
 
                     {showProductForm && <ProductInfoForm
@@ -145,18 +182,20 @@ export function MyAccount () {
                         reload={reload}
                         setReload={setReload}
                     />}
-                </ProductsRegistered>
+                </ProductsRegisteredSection>
                 
-                <Sales>
+                <SalesSection>
                     <h3>Minhas vendas</h3>
                     {isLoadingSales && <Loading bgcolor={"purple"}/>}
                     {!isLoadingSales && !sales && errorSales && <p>Você não realizou nenhuma venda ainda.</p>}
                     {!isLoadingSales && sales && (
-                        <div id="sales">
-                            {renderSales}
-                        </div>
+                        <CarouselWrapper>
+                            <button onClick={handleLeftClickSales}><IoIosArrowDropleftCircle/></button>
+                            <Carousel ref={carouselSales}>{renderSales}</Carousel>
+                            <button onClick={handleRightClickSales}><IoIosArrowDroprightCircle/></button>
+                        </CarouselWrapper>
                     )}
-                </Sales>
+                </SalesSection>
             </Container>
 
             <Footer/>
