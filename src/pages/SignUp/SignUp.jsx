@@ -1,12 +1,16 @@
-import axios from "axios"
 import React, { useState } from "react"
 import { useNavigate } from "react-router-dom"
+
+import axios from "axios"
+import { BsEye, BsEyeSlash } from "react-icons/bs"
+
 import { Header } from "../../components/Header/Header"
 import { Loading } from "../../components/Loading/Loading"
+
 import { base_url, validateEmail, validateName, validatePassword } from "../../constants/constants"
 import { useForm } from "../../hooks/useForm"
+
 import { Container } from "./style"
-import { BsEye, BsEyeSlash } from "react-icons/bs"
 import { PasswordInput } from "../../globalStyle"
 
 
