@@ -44,6 +44,10 @@ export const GlobalStyle = createGlobalStyle`
                 cursor: pointer;
             }
         }
+
+        a {
+            color: #35004b;
+        }
     }
 `
 
