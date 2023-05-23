@@ -81,13 +81,13 @@ export function SignUp () {
                 <form onSubmit={handleSubmit}>
                     <div>
                         <label htmlFor="name">Nome completo</label>
-                        <input type="text" placeholder="Digite o seu nome completo" name="name" value={form.name} onChange={onChange}/>
-                        {nameError && <p>Deve haver um espaço entre o seu nome e o sobrenome.</p>}
+                        <input type="text" placeholder="Maria Santos" name="name" value={form.name} onChange={onChange}/>
+                        {nameError && <p>Digite nome e sobrenome com as iniciais em maiúsculo.</p>}
                     </div>
 
                     <div>
                         <label htmlFor="email">E-mail</label>
-                        <input type="email" placeholder="maria@gmail.com" name="email" value={form.email} onChange={onChange}/>
+                        <input type="email" placeholder="maria-santos@gmail.com" name="email" value={form.email} onChange={onChange}/>
                         {emailError && <p>E-mail no formato incorreto.</p>}
                     </div>
 
