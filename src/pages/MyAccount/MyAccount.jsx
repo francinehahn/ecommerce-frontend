@@ -57,7 +57,7 @@ export function MyAccount () {
     }
 
     const handleLeftClickProducts = () => {
-        carouselSunday.current.scrollLeft -= carouselSunday.current.offsetWidth
+        carouselProducts.current.scrollLeft -= carouselProducts.current.offsetWidth
     }
 
     const handleRightClickProducts = () => {

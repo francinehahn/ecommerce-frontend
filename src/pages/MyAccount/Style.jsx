@@ -2,11 +2,12 @@ import styled from "styled-components"
 
 export const Container = styled.div `
     min-height: 73vh;
-    margin: 3.5rem 5rem;
+    margin: 3.5rem 4rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 4rem;
+    overflow-x: hidden;
 
     @media screen and (max-width: 800px) {
         margin: 3.5rem 2rem;
@@ -16,10 +17,10 @@ export const Container = styled.div `
         text-align: center;
         margin-bottom: 1rem;
         line-height: 2rem;
-        font-size: 1.5rem;
+        font-size: 1.2rem;
 
         @media screen and (max-width: 800px) {
-            font-size: 1.2rem;
+            font-size: 1rem;
         }
     }
 `
@@ -29,6 +30,7 @@ export const PersonalInfo = styled.section `
     flex-direction: column;
     align-items: center;
     gap: 1rem;
+    width: 100vw;
 
     span {
         display: flex;
@@ -38,10 +40,10 @@ export const PersonalInfo = styled.section `
 
         h2 {
             text-align: center;
-            font-size: 1.5rem;
+            font-size: 1.2rem;
 
-            @media screen and (max-width: 800px) {
-                font-size: 1.2rem;
+            @media screen and (max-width: 600px) {
+                font-size: .8rem;
             }
         }
         
@@ -60,24 +62,31 @@ export const PersonalInfo = styled.section `
             display: flex;
             justify-content: center;
             gap: .5rem;
-            
+
             p {
-                text-align: center;
-                line-height: 2rem;
                 font-size: 1rem;
+                line-height: 1.5rem;
+
+                @media screen and (max-width: 600px) {
+                    font-size: .8rem;
+                }
             }
         }
     }
 `
 
 export const PurchasesSection = styled.section `
-    p {
-        text-align: center;
-        line-height: 1.7rem;
-    }
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 `
 
 export const ProductsRegisteredSection = styled.section `
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
     span {
         display: flex;
         justify-content: center;
@@ -95,21 +104,19 @@ export const ProductsRegisteredSection = styled.section `
             }
         }
     }
-
-    p {
-        text-align: center;
-    }
 `
 
 export const SalesSection = styled.section `
-    p {
-        text-align: center;
-    }
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 `
 
 export const CarouselWrapper = styled.div `
     display: flex;
     gap: 1rem;
+    width: 90vw;
 
     button {
         @media screen and (max-width: 900px) {
@@ -140,6 +147,7 @@ export const Carousel = styled.div `
     gap: 1rem;
     overflow-x: auto;
     scroll-behavior: smooth;
+
     ::-webkit-scrollbar {
         display: none;
     }

@@ -11,7 +11,7 @@ export function ProductRegisteredCard(props) {
             <img src={props.imageUrl} alt={props.name}/>
             <div>
                 <h4>{props.name}</h4>
-                <p>Preço: R${price}</p>
+                <p>R${price}</p>
             </div>
             <BsFillPencilFill onClick={props.onClick}/>
         </Product>

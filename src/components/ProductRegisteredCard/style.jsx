@@ -7,14 +7,14 @@ export const Product = styled.div `
     gap: 1rem;
     border: 1px solid lightgrey;
     border-radius: 3px;
-    width: 25rem;
-    height: 7rem;
+    min-width: 20rem;
+    height: 6rem;
     padding-right: 2rem;
 
     img {
         border-radius: 3px 0 0 3px;
-        width: 100%;
-        height: 100%;
+        width: 6rem;
+        height: 6rem;
     }
 
     div {
@@ -23,21 +23,29 @@ export const Product = styled.div `
         justify-content: center;
 
         h4 {
-            font-size: 1rem;
+            font-size: .9rem;
             line-height: 1.3rem;
+
+            @media screen and (max-width: 600px) {
+                font-size: .8rem;
+            }
         }
 
         p {
             font-size: .9rem;
             line-height: 2rem;
             text-align: left;
+
+            @media screen and (max-width: 600px) {
+                font-size: .8rem;
+            }
         }
     }
 
     svg {
         margin: auto 0;
-        height: 1.1rem;
-        width: 1.1rem;
+        height: 1rem;
+        width: 1rem;
         display: block;
         :hover {
             opacity: .5;
