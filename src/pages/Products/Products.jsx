@@ -4,11 +4,12 @@ import { Header } from '../../components/Header/Header'
 import { Loading } from '../../components/Loading/Loading'
 import {ProductCard} from '../../components/ProductCard/ProductCard'
 import { useRequestData } from '../../hooks/useRequestData'
-import {Container} from './style'
+import {Container, SearchBar} from './style'
 import {AiOutlineArrowLeft, AiOutlineArrowRight} from "react-icons/ai"
 import banner_desktop from "../../img/banner_desktop.png"
 import banner_mobile from "../../img/banner_mobile.png"
 import { base_url } from '../../constants/constants'
+import { Banner } from '../../components/Banner/Banner'
 
 
 export function Products() {
@@ -71,7 +72,7 @@ export function Products() {
             <Header reload={reload}/>
             
             <Container>
-                <span>
+                <SearchBar>
                     <input placeholder='Pesquisar por...' value={searchedProduct} onChange={e => setSearchedProduct(e.target.value)}/>
                     
                     <div>
@@ -81,10 +82,12 @@ export function Products() {
                             <option value="desc">Z - A</option>
                         </select>
                     </div>
-                </span>
+                </SearchBar>
 
                 {!searchedProduct && <img id="banner_desktop" src={banner_desktop} alt="Imagem promocional do dia do consumidor"/>}
                 {!searchedProduct && <img id="banner_mobile" src={banner_mobile} alt="Imagem promocional do dia do consumidor"/>}
+
+                {!searchedProduct && <Banner/>}
 
                 <section>
                     {isLoading && <Loading bgcolor={"purple"}/>}
