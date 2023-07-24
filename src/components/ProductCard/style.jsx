@@ -8,48 +8,42 @@ export const Product = styled.div `
     border: 1px solid #d0d0d0;
     border-radius: 3px;
     padding-bottom: 1rem;
-
-    @media screen and (min-width: 1130px) {
-        height: 21rem;
-        width: 14.375rem;
-    }
-    @media screen and (max-width: 1130px) {
-        height: 20rem;
-        width: 16rem;
-    }
+    height: 17rem;
+    width: 13rem;
+    
     @media screen and (max-width: 600px) {
-        height: 16rem;
+        height: 14.5rem;
         width: 10.5rem;
     }
 
     div {
         img {
             width: 100%;
-            height: 10rem;
+            height: 8rem;
             border-radius: 3px 3px 0 0;
 
             @media screen and (max-width: 600px) {
-                height: 7rem;
+                height: 6rem;
             }
         }
         h3 {
-            font-size: 1rem;
+            font-size: .9rem;
             text-align: center;
-            padding: 1rem .75rem 0 .75rem;
+            padding: .5rem .75rem 0 .75rem;
 
             @media screen and (max-width: 650px) {
-                font-size: .8rem;
+                font-size: .7rem;
                 padding: .5rem .6rem 0 .6rem;
             }
         }
         p {
-            font-size: 1rem;
+            font-size: .8rem;
             line-height: 2rem;
             text-align: center;
             padding: 0 .75rem;
 
             @media screen and (max-width: 650px) {
-                font-size: .8rem;
+                font-size: .6rem;
                 padding: 0 .6rem;
             }
         }
@@ -59,7 +53,7 @@ export const Product = styled.div `
         display: flex;
         align-items: center;
         gap: .5rem;
-        font-size: 1rem;
+        font-size: .8rem;
         margin: 0 auto;
         border-radius: 3px;
         padding: .625rem 1.25rem;
@@ -76,7 +70,7 @@ export const Product = styled.div `
         }
 
         @media screen and (max-width: 650px) {
-            font-size: .8rem;
+            font-size: .6rem;
         }
     }
 `
