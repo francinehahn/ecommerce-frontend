@@ -118,6 +118,10 @@ export const CarouselWrapper = styled.div `
     gap: 1rem;
     width: 90vw;
 
+    @media screen and (max-width: 900px) {
+        width: 85vw;
+    }
+
     button {
         @media screen and (max-width: 900px) {
             display: none;

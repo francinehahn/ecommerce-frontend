@@ -32,18 +32,18 @@ export const Product = styled.div `
             padding: .5rem .75rem 0 .75rem;
 
             @media screen and (max-width: 650px) {
-                font-size: .7rem;
+                font-size: .8rem;
                 padding: .5rem .6rem 0 .6rem;
             }
         }
         p {
-            font-size: .8rem;
+            font-size: .9rem;
             line-height: 2rem;
             text-align: center;
             padding: 0 .75rem;
 
             @media screen and (max-width: 650px) {
-                font-size: .6rem;
+                font-size: .8rem;
                 padding: 0 .6rem;
             }
         }
@@ -71,6 +71,12 @@ export const Product = styled.div `
 
         @media screen and (max-width: 650px) {
             font-size: .6rem;
+        }
+
+        svg {
+            width: 1rem;
+            height: 1rem;
+            color: #505050;
         }
     }
 `
