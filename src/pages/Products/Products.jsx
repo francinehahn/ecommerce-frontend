@@ -4,7 +4,7 @@ import { Header } from '../../components/Header/Header'
 import { Loading } from '../../components/Loading/Loading'
 import {ProductCard} from '../../components/ProductCard/ProductCard'
 import { useRequestData } from '../../hooks/useRequestData'
-import {Container, SearchBar} from './style'
+import {Container, Pages, SearchBar} from './style'
 import {AiOutlineArrowLeft, AiOutlineArrowRight} from "react-icons/ai"
 import banner_desktop from "../../img/banner_desktop.png"
 import banner_mobile from "../../img/banner_mobile.png"
@@ -97,11 +97,11 @@ export function Products() {
 
                 {!isLoading &&
                     (
-                        <span>
+                        <Pages>
                             <AiOutlineArrowLeft onClick={handlePreviousPage}/>
                             <p>{page}</p>
                             <AiOutlineArrowRight onClick={handleNextPage}/>
-                        </span>
+                        </Pages>
                     )
                 }
             </Container>

@@ -68,3 +68,23 @@ export const SearchBar = styled.span `
         }
     }
 `
+
+export const Pages = styled.span `
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    p {
+        font-size: 1.1rem;
+    }
+    svg {
+        width: 1.5rem;
+        height: 1.2rem;
+        cursor: pointer;
+
+        :hover {
+            opacity: .8;
+        }
+    }
+`
