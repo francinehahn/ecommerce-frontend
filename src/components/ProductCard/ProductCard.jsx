@@ -1,4 +1,5 @@
 import React from 'react'
+import {AiOutlineShoppingCart} from 'react-icons/ai'
 import {Product} from './style'
 
 export function ProductCard(props) {
@@ -6,12 +7,15 @@ export function ProductCard(props) {
     
     return (
         <Product>
-            <img src={props.imageUrl} alt={props.name}/>
             <div>
+                <img src={props.imageUrl} alt={props.name}/>
                 <h3>{props.name}</h3>
-                <p>Preço: R${price}</p>
-                <button onClick={props.onClick}>Comprar</button>
+                <p>R${price}</p>
             </div>
+            <button onClick={props.onClick}>
+                <AiOutlineShoppingCart/>
+                Adicionar
+            </button>
         </Product>
     )
 }

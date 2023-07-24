@@ -1,6 +1,7 @@
-import React, { useState } from "react"
+import React, { useContext, useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 
+import { AuthContext } from "../../context/AuthContext"
 import axios from "axios"
 import {BsEye, BsEyeSlash} from 'react-icons/bs'
 
@@ -15,6 +16,7 @@ import { PasswordInput } from "../../globalStyle"
 
 
 export function Login () {
+    const { setIsLoggedIn } = useContext(AuthContext)
     const [reload, setReload] = useState(false)
     const [form, onChange] = useForm({email: "", password: ""})
     const [emailError, setEmailError] = useState(false)
@@ -48,6 +50,11 @@ export function Login () {
             axios.post(`${base_url}users/login`, body)
             .then(response => {
                 localStorage.setItem("token", response.data.token)
+                const now = new Date()
+                const expirationTime = new Date(now)
+                expirationTime.setHours(expirationTime.getHours() + 1)
+                localStorage.setItem("expiration", expirationTime.toLocaleString())
+                setIsLoggedIn(true)
                 setReload(!reload)
                 setEmailError(false)
                 setPasswordError(false)
@@ -84,8 +91,7 @@ export function Login () {
                         {passwordError && <span>A senha deve conter pelo menos 6 caracteres.</span>}
                     </div>
 
-                    {axiosError === "Email not found." && <p>E-mail não encontrado.</p>}
-                    {axiosError === "Incorrect password." && <p>Senha incorreta.</p>}
+                    {(axiosError === "Email not found." || axiosError === "Incorrect password.") && <p>E-mail ou senha incorretos.</p>}
 
                     <button>{!isLoading? "Entrar" : <Loading bgcolor={"white"}/>}</button>
                 </form>

@@ -63,7 +63,7 @@ export const Container = styled.main `
         gap: 2.5rem;
 
         @media screen and (max-width: 700px) {
-            margin: 2rem 1rem;
+            margin: 2rem .5rem;
             gap: 1rem;
         }
     }

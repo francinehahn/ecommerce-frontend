@@ -1,28 +1,22 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import {HeaderSection, NavDesktop, MobileSymbol, NavMobile} from './style'
 import logo from '../../img/logo_LabEcommerce.png'
 import { Link } from 'react-router-dom'
 import {AiOutlineShoppingCart} from 'react-icons/ai'
-import { useRequestData } from '../../hooks/useRequestData'
-import { base_url } from '../../constants/constants'
+import { AuthContext } from '../../context/AuthContext'
 
 export function Header(props) {
-    let productsInCart = JSON.parse(localStorage.getItem("products")) !== null && JSON.parse(localStorage.getItem("products")).length
-    const token = localStorage.getItem("token")
-    
+    const { isLoggedIn } = useContext(AuthContext)
     const [showMobileMenu, setShowMobileMenu] = useState(false)
-    const [userData, isLoadingUserData, userError] = useRequestData(`${base_url}users/profile`, token)
+    let productsInCart = JSON.parse(localStorage.getItem("products")) !== null && JSON.parse(localStorage.getItem("products")).length
 
-    if (!isLoadingUserData && !userData && userError) {
-        localStorage.removeItem("token")
-    }
-    
     useEffect(() => {
         productsInCart = JSON.parse(localStorage.getItem("products")) !== null && JSON.parse(localStorage.getItem("products")).length
     }, [props.reload])
 
     const handleLogout = () => {
         localStorage.removeItem("token")
+        localStorage.removeItem("expiration")
         props.setReload(!props.reload)
     }
 
@@ -30,15 +24,15 @@ export function Header(props) {
         return (
             <>
                 <Link to="/">Home</Link>
-                {userData && <Link to="/minha-conta">Minha Conta</Link>}
+                {isLoggedIn && <Link to="/minha-conta">Minha Conta</Link>}
                 <span>
                     <Link to="/carrinho">Carrinho</Link>
                     <AiOutlineShoppingCart/>
                     {JSON.parse(localStorage.getItem("products")) !== null && JSON.parse(localStorage.getItem("products")).length > 0 &&
                     <p>{productsInCart}</p>}
                 </span>
-                {userData && <Link to="/" onClick={handleLogout}>Logout</Link>}
-                {!userData && <Link to="/login">Login</Link>}
+                {isLoggedIn && <Link to="/" onClick={handleLogout}>Logout</Link>}
+                {!isLoggedIn && <Link to="/login">Login</Link>}
             </>
         )
     }

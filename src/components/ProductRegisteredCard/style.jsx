@@ -7,8 +7,8 @@ export const Product = styled.div `
     gap: 1rem;
     border: 1px solid lightgrey;
     border-radius: 3px;
-    min-width: 22rem;
-    min-height: 7rem;
+    width: 25rem;
+    height: 7rem;
     padding-right: 2rem;
 
     img {

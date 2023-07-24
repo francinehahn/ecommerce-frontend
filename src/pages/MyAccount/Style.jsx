@@ -1,10 +1,11 @@
 import styled from "styled-components"
-//dwsvh1g8zj
+
 export const Container = styled.div `
     min-height: 73vh;
     margin: 3.5rem 5rem;
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 4rem;
 
     @media screen and (max-width: 800px) {
